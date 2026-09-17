@@ -1,545 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Carnivore Chaos | Evrima</title>
+  <title>Carnivore Chaos | Evrima</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="website">
-
-    <!-- ========================================
-         LEFT SIDEBAR
-    ========================================= -->
-
-    <aside class="sidebar">
-
-        <div class="sidebar-logo">
-            <div class="logo-carnivore">CARNIVORE</div>
-            <div class="logo-chaos">CHAOS</div>
-            <div class="logo-evrima">EVRIMA</div>
-        </div>
-
-        <nav class="navigation">
-
-            <a href="index.html" class="nav-item active">
-                <span class="nav-icon">⌂</span>
-                <span>HOME</span>
-            </a>
-
-            <a href="profile.html" class="nav-item">
-                <span class="nav-icon">♟</span>
-                <span>MY PROFILE</span>
-            </a>
-
-            <a href="dinosaurs.html" class="nav-item">
-                <span class="nav-icon">🦖</span>
-                <span>MY DINOSAURS</span>
-            </a>
-
-            <a href="market.html" class="nav-item">
-                <span class="nav-icon">🛒</span>
-                <span>DINO MARKET</span>
-            </a>
-
-            <a href="wallet.html" class="nav-item">
-                <span class="nav-icon">🪙</span>
-                <span>DINO DOLLARS</span>
-            </a>
-
-            <a href="mutations.html" class="nav-item">
-                <span class="nav-icon">🧬</span>
-                <span>MUTATIONS</span>
-            </a>
-
-            <a href="prime.html" class="nav-item">
-                <span class="nav-icon">♛</span>
-                <span>PRIME</span>
-            </a>
-
-            <a href="friends.html" class="nav-item">
-                <span class="nav-icon">👥</span>
-                <span>FRIENDS</span>
-            </a>
-
-            <a href="teleport.html" class="nav-item">
-                <span class="nav-icon">◎</span>
-                <span>TELEPORT</span>
-            </a>
-
-            <a href="achievements.html" class="nav-item">
-                <span class="nav-icon">🏆</span>
-                <span>ACHIEVEMENTS</span>
-            </a>
-
-            <a href="leaderboards.html" class="nav-item">
-                <span class="nav-icon">▥</span>
-                <span>LEADERBOARDS</span>
-            </a>
-
-            <a href="rules.html" class="nav-item">
-                <span class="nav-icon">▤</span>
-                <span>SERVER RULES</span>
-            </a>
-
-            <a href="discord.html" class="nav-item">
-                <span class="nav-icon">☁</span>
-                <span>DISCORD</span>
-            </a>
-
-        </nav>
-
-        <div class="sidebar-quote">
-            <span>SURVIVE</span>
-            <span>HUNT</span>
-            <span>DOMINATE</span>
-        </div>
-
-    </aside>
-
-
-    <!-- ========================================
-         RIGHT SIDE
-    ========================================= -->
-
-    <div class="main-area">
-
-
-        <!-- TOP BAR -->
-
-        <header class="topbar">
-
-            <div class="topbar-right">
-
-                <div class="server-indicator">
-                    <span class="green-dot"></span>
-                    SERVER ONLINE
-                </div>
-
-                <div class="top-divider"></div>
-
-                <a href="profile.html" class="welcome-user">
-                    👤 &nbsp; WELCOME, SURVIVOR
-                    <span class="arrow">⌄</span>
-                </a>
-
-                <div class="top-divider"></div>
-
-                <a href="discord.html" class="social-link">◉</a>
-                <a href="#" class="social-link">◉</a>
-                <a href="#" class="social-link">▶</a>
-
-            </div>
-
-        </header>
-
-
-        <!-- ========================================
-             HERO
-        ========================================= -->
-
-        <section class="hero">
-
-            <div class="hero-shade"></div>
-
-            <div class="hero-tagline">
-                SURVIVE &nbsp;•&nbsp; HUNT &nbsp;•&nbsp; DOMINATE
-            </div>
-
-            <div class="hero-center">
-
-                <div class="hero-logo">
-                    <div class="hero-carnivore">CARNIVORE</div>
-                    <div class="hero-chaos">CHAOS</div>
-                    <div class="hero-evrima">EVRIMA</div>
-                </div>
-
-                <div class="hero-buttons">
-
-                    <a href="dinosaurs.html"
-                       class="hero-button primary">
-                        ENTER THE CHAOS
-                    </a>
-
-                    <a href="market.html"
-                       class="hero-button">
-                        DINO MARKET
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hero-left-writing">
-                SAME<br>
-                THIRST.<br>
-                DIFFERENT<br>
-                PREY.
-            </div>
-
-            <div class="hero-right-writing">
-                LET<br>
-                CHAOS<br>
-                REIGN
-            </div>
-
-        </section>
-
-
-        <!-- ========================================
-             CONTENT
-        ========================================= -->
-
-        <main class="content">
-
-
-            <!-- SERVER STATS -->
-
-            <section class="stats">
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        👥
-                    </div>
-
-                    <div class="stat-info">
-
-                        <div class="stat-title">
-                            PLAYERS ONLINE
-                        </div>
-
-                        <div
-                            class="stat-number green"
-                            id="playersOnline">
-                            —
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        🦖
-                    </div>
-
-                    <div class="stat-info">
-
-                        <div class="stat-title">
-                            DINOS ALIVE
-                        </div>
-
-                        <div
-                            class="stat-number"
-                            id="dinosAlive">
-                            —
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        💀
-                    </div>
-
-                    <div class="stat-info">
-
-                        <div class="stat-title">
-                            KILLS TODAY
-                        </div>
-
-                        <div
-                            class="stat-number"
-                            id="killsToday">
-                            —
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        🪙
-                    </div>
-
-                    <div class="stat-info">
-
-                        <div class="stat-title">
-                            DD EARNED TODAY
-                        </div>
-
-                        <div
-                            class="stat-number"
-                            id="ddEarned">
-                            —
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ========================================
-                 FEATURE CARDS
-            ========================================= -->
-
-            <section class="features">
-
-
-                <!-- DINO MARKET -->
-
-                <a href="market.html"
-                   class="feature-card market-feature">
-
-                    <div class="feature-content">
-
-                        <h2>
-                            <span>🛒</span>
-                            DINO MARKET
-                        </h2>
-
-                        <p>
-                            Purchase dinosaurs at 75% growth
-                            using your Dino Dollars.
-                        </p>
-
-                        <strong>
-                            ENTER MARKET →
-                        </strong>
-
-                    </div>
-
-                    <div class="feature-dino">
-                        🦖
-                    </div>
-
-                </a>
-
-
-                <!-- PRIME -->
-
-                <a href="prime.html"
-                   class="feature-card prime-feature">
-
-                    <div class="feature-content">
-
-                        <h2>
-                            <span>♛</span>
-                            GO PRIME
-                        </h2>
-
-                        <p>
-                            Upgrade your dinosaur to Prime.
-                            No requirements. Pay the price
-                            and unleash the beast.
-                        </p>
-
-                        <strong>
-                            VIEW PRIME →
-                        </strong>
-
-                    </div>
-
-                    <div class="feature-dino">
-                        🦖
-                    </div>
-
-                </a>
-
-
-                <!-- MUTATIONS -->
-
-                <a href="mutations.html"
-                   class="feature-card mutation-feature">
-
-                    <div class="feature-content">
-
-                        <h2>
-                            <span>🧬</span>
-                            MUTATIONS
-                        </h2>
-
-                        <p>
-                            Build your dinosaur with purchasable
-                            mutations and create your perfect
-                            survivor.
-                        </p>
-
-                        <strong>
-                            VIEW MUTATIONS →
-                        </strong>
-
-                    </div>
-
-                    <div class="mutation-decoration">
-                        🧬
-                    </div>
-
-                </a>
-
-            </section>
-
-
-            <!-- ========================================
-                 SERVER / DISCORD STRIP
-            ========================================= -->
-
-            <section class="bottom-panel">
-
-
-                <!-- SERVER STATUS -->
-
-                <div class="server-box">
-
-                    <div class="bottom-title">
-                        SERVER STATUS
-                    </div>
-
-                    <div class="server-online-large">
-
-                        <span class="large-green-dot"></span>
-
-                        <strong>
-                            ONLINE
-                        </strong>
-
-                    </div>
-
-                    <div class="server-details">
-                        EVRIMA &nbsp;|&nbsp; MODDED &nbsp;|&nbsp; 24/7
-                    </div>
-
-                </div>
-
-
-                <!-- CENTER QUOTE -->
-
-                <div class="bottom-quote">
-
-                    <div>
-                        “IN THIS WORLD,<br>
-                        YOU'RE EITHER THE HUNTER<br>
-                        OR THE PREY.”
-                    </div>
-
-                </div>
-
-
-                <!-- DISCORD -->
-
-                <div class="discord-box">
-
-                    <div class="discord-icon">
-                        🎮
-                    </div>
-
-                    <div class="discord-info">
-
-                        <h3>
-                            JOIN OUR DISCORD
-                        </h3>
-
-                        <p>
-                            COMMUNITY • EVENTS • SUPPORT<br>
-                            AND MORE
-                        </p>
-
-                        <a href="discord.html"
-                           class="discord-button">
-                            JOIN DISCORD →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-        </main>
-
-
-        <!-- ========================================
-             FOOTER
-        ========================================= -->
-
-        <footer>
-
-            CARNIVORE CHAOS
-            <span>•</span>
-            EVRIMA COMMUNITY
-
-        </footer>
-
-
+<div class="site-shell">
+
+  <!-- =========================
+       LEFT SIDEBAR
+  ========================== -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <div class="logo-carnivore">CARNIVORE</div>
+      <div class="logo-chaos">CHAOS</div>
+      <div class="logo-evrima">EVRIMA</div>
     </div>
+
+    <nav class="sidebar-nav">
+
+      <a href="index.html" class="nav-item active">
+        <span class="nav-icon">⌂</span>
+        <span>HOME</span>
+      </a>
+
+      <a href="profile.html" class="nav-item">
+        <span class="nav-icon">♟</span>
+        <span>MY PROFILE</span>
+      </a>
+
+      <a href="dinosaurs.html" class="nav-item">
+        <span class="nav-icon">🦖</span>
+        <span>MY DINOSAURS</span>
+      </a>
+
+      <a href="market.html" class="nav-item">
+        <span class="nav-icon">🛒</span>
+        <span>DINO MARKET</span>
+      </a>
+
+      <a href="wallet.html" class="nav-item">
+        <span class="nav-icon">🪙</span>
+        <span>DINO DOLLARS</span>
+      </a>
+
+      <a href="mutations.html" class="nav-item">
+        <span class="nav-icon">🧬</span>
+        <span>MUTATIONS</span>
+      </a>
+
+      <a href="prime.html" class="nav-item">
+        <span class="nav-icon">♛</span>
+        <span>PRIME</span>
+      </a>
+
+      <a href="friends.html" class="nav-item">
+        <span class="nav-icon">♟♟</span>
+        <span>FRIENDS</span>
+      </a>
+
+      <a href="teleport.html" class="nav-item">
+        <span class="nav-icon">◉</span>
+        <span>TELEPORT</span>
+      </a>
+
+      <a href="achievements.html" class="nav-item">
+        <span class="nav-icon">🏆</span>
+        <span>ACHIEVEMENTS</span>
+      </a>
+
+      <a href="leaderboards.html" class="nav-item">
+        <span class="nav-icon">▥</span>
+        <span>LEADERBOARDS</span>
+      </a>
+
+      <a href="rules.html" class="nav-item">
+        <span class="nav-icon">▤</span>
+        <span>SERVER RULES</span>
+      </a>
+
+      <a href="#" class="nav-item" id="discordSide">
+        <span class="nav-icon">☁</span>
+        <span>DISCORD</span>
+      </a>
+
+    </nav>
+
+    <div class="sidebar-slogan">
+      SURVIVE<br>
+      HUNT<br>
+      DOMINATE
+    </div>
+
+  </aside>
+
+
+  <!-- =========================
+       MAIN WEBSITE
+  ========================== -->
+  <div class="main-area">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+      <div class="topbar-spacer"></div>
+
+      <div class="topbar-right">
+
+        <div class="server-online">
+          <span class="online-dot"></span>
+          SERVER ONLINE
+        </div>
+
+        <div class="top-divider"></div>
+
+        <div class="welcome">
+          👤 WELCOME, SURVIVOR
+          <span class="arrow">⌄</span>
+        </div>
+
+        <div class="top-divider"></div>
+
+        <div class="social-icons">
+          <a href="#" aria-label="Discord">◉</a>
+          <a href="#" aria-label="Social">◎</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero">
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-tagline">
+        SURVIVE
+        <span>•</span>
+        HUNT
+        <span>•</span>
+        DOMINATE
+      </div>
+
+      <div class="hero-center">
+
+        <div class="hero-title">
+          <div class="title-carnivore">CARNIVORE</div>
+          <div class="title-chaos">CHAOS</div>
+          <div class="title-evrima">EVRIMA</div>
+        </div>
+
+        <div class="hero-buttons">
+
+          <a href="dinosaurs.html" class="hero-button primary">
+            ENTER THE CHAOS
+          </a>
+
+          <a href="market.html" class="hero-button">
+            DINO MARKET
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-writing hero-writing-left">
+        SAME<br>
+        THIRST.<br>
+        DIFFERENT<br>
+        PREY.
+      </div>
+
+      <div class="hero-writing hero-writing-right">
+        LET<br>
+        CHAOS<br>
+        REIGN
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         HOMEPAGE CONTENT
+    ========================== -->
+    <main class="dashboard">
+
+      <!-- STATS -->
+      <section class="stats-grid">
+
+        <div class="stat-card">
+
+          <div class="stat-icon">♟♟</div>
+
+          <div>
+            <div class="stat-label">
+              PLAYERS ONLINE
+            </div>
+
+            <div class="stat-value green">
+              12
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div class="stat-icon">
+            🦖
+          </div>
+
+          <div>
+            <div class="stat-label">
+              DINOS ALIVE
+            </div>
+
+            <div class="stat-value">
+              87
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div class="stat-icon">
+            💀
+          </div>
+
+          <div>
+            <div class="stat-label">
+              KILLS TODAY
+            </div>
+
+            <div class="stat-value">
+              124
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div class="stat-icon">
+            🪙
+          </div>
+
+          <div>
+            <div class="stat-label">
+              DD EARNED TODAY
+            </div>
+
+            <div class="stat-value">
+              1,450
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           FEATURE CARDS
+      ========================== -->
+      <section class="feature-grid">
+
+        <!-- MARKET -->
+        <article class="feature-card market-card">
+
+          <div class="feature-content">
+
+            <div class="feature-heading">
+
+              <span class="feature-icon">
+                🛒
+              </span>
+
+              <h2>
+                DINO MARKET
+              </h2>
+
+            </div>
+
+            <p>
+              Purchase dinosaurs at 75% growth
+              using your Dino Dollars.
+            </p>
+
+            <a href="market.html" class="feature-link">
+              ENTER MARKET →
+            </a>
+
+          </div>
+
+          <div class="feature-dino">
+            🦖
+          </div>
+
+        </article>
+
+
+        <!-- PRIME -->
+        <article class="feature-card prime-card">
+
+          <div class="feature-content">
+
+            <div class="feature-heading">
+
+              <span class="feature-icon">
+                ♛
+              </span>
+
+              <h2>
+                GO PRIME
+              </h2>
+
+            </div>
+
+            <p>
+              Upgrade your dinosaur to Prime.
+              No requirements. Pay the price
+              and unleash the beast.
+            </p>
+
+            <a href="prime.html" class="feature-link prime-link">
+              VIEW PRIME →
+            </a>
+
+          </div>
+
+          <div class="feature-dino">
+            🦖
+          </div>
+
+        </article>
+
+
+        <!-- MUTATIONS -->
+        <article class="feature-card mutation-card">
+
+          <div class="feature-content">
+
+            <div class="feature-heading">
+
+              <span class="feature-icon">
+                🧬
+              </span>
+
+              <h2>
+                MUTATIONS
+              </h2>
+
+            </div>
+
+            <p>
+              Build your dinosaur with purchasable
+              mutations and create your perfect
+              survivor.
+            </p>
+
+            <a href="mutations.html" class="feature-link">
+              VIEW MUTATIONS →
+            </a>
+
+          </div>
+
+          <div class="mutation-decoration">
+            🧬
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- =========================
+           BOTTOM SERVER PANEL
+      ========================== -->
+      <section class="server-panel">
+
+        <!-- SERVER STATUS -->
+        <div class="server-status-block">
+
+          <div class="bottom-label">
+            SERVER STATUS
+          </div>
+
+          <div class="server-status-main">
+
+            <span class="big-online-dot"></span>
+
+            <span>
+              ONLINE
+            </span>
+
+          </div>
+
+          <div class="server-description">
+            EVRIMA | MODDED | 24/7
+          </div>
+
+        </div>
+
+
+        <!-- QUOTE -->
+        <div class="server-quote">
+
+          <div class="quote-text">
+            “IN THIS WORLD,<br>
+            YOU'RE EITHER THE HUNTER<br>
+            OR THE PREY.”
+          </div>
+
+        </div>
+
+
+        <!-- DISCORD -->
+        <div class="discord-block">
+
+          <div class="discord-logo">
+            🎮
+          </div>
+
+          <div class="discord-info">
+
+            <div class="discord-title">
+              JOIN OUR DISCORD
+            </div>
+
+            <div class="discord-subtitle">
+              COMMUNITY • EVENTS • SUPPORT<br>
+              AND MORE
+            </div>
+
+            <button id="discordButton">
+              JOIN DISCORD →
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <footer>
+      CARNIVORE CHAOS • EVRIMA COMMUNITY
+    </footer>
+
+  </div>
 
 </div>
 
 
-<!-- ========================================
+<!-- =========================
      JAVASCRIPT
-========================================= -->
-
+========================== -->
 <script>
 
-    /*
-        CARNIVORE CHAOS
+  /*
+   * Discord button
+   *
+   * Later we will replace the # with your
+   * actual Carnivore Chaos Discord invite.
+   */
 
-        These values stay blank until
-        the Evrima server/backend is connected.
+  const discordInvite = "#";
 
-        Later the backend will automatically
-        update:
+  const discordButton =
+    document.getElementById("discordButton");
 
-        - Players Online
-        - Dinosaurs Alive
-        - Kills Today
-        - DD Earned Today
-    */
-
-    const serverData = {
-
-        playersOnline: "—",
-        dinosAlive: "—",
-        killsToday: "—",
-        ddEarned: "—"
-
-    };
+  const discordSide =
+    document.getElementById("discordSide");
 
 
-    document.getElementById("playersOnline").textContent =
-        serverData.playersOnline;
+  discordButton.addEventListener("click", function () {
 
-    document.getElementById("dinosAlive").textContent =
-        serverData.dinosAlive;
+    if (discordInvite === "#") {
 
-    document.getElementById("killsToday").textContent =
-        serverData.killsToday;
+      alert(
+        "Carnivore Chaos Discord link will be connected here."
+      );
 
-    document.getElementById("ddEarned").textContent =
-        serverData.ddEarned;
+      return;
+    }
+
+    window.open(discordInvite, "_blank");
+
+  });
+
+
+  discordSide.addEventListener("click", function (event) {
+
+    event.preventDefault();
+
+    if (discordInvite === "#") {
+
+      alert(
+        "Carnivore Chaos Discord link will be connected here."
+      );
+
+      return;
+    }
+
+    window.open(discordInvite, "_blank");
+
+  });
 
 </script>
-
 
 </body>
 </html>
