@@ -1,820 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Carnivore Chaos | Evrima</title>
+    <title>Carnivore Chaos | Evrima</title>
 
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-:root{
-    --red:#ef252d;
-    --dark:#080808;
-    --panel:#111112;
-    --border:#482326;
-    --text:#f3f3f3;
-    --muted:#a8a8a8;
-    --green:#65ed75;
-    --gold:#ffd34f;
-}
-
-body{
-    background:#050505;
-    color:var(--text);
-    font-family:Arial, Helvetica, sans-serif;
-    min-height:100vh;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-/* =========================
-   SIDEBAR
-========================= */
-
-.sidebar{
-    position:fixed;
-    left:0;
-    top:0;
-    bottom:0;
-    width:250px;
-    background:#080808;
-    border-right:1px solid #3a1719;
-    padding:22px 15px;
-    z-index:20;
-    overflow-y:auto;
-}
-
-.logo{
-    text-align:center;
-    padding:5px 5px 20px;
-}
-
-.logo-main{
-    font-size:30px;
-    line-height:.88;
-    font-weight:900;
-    letter-spacing:1px;
-}
-
-.logo-main span{
-    display:block;
-    color:var(--red);
-}
-
-.logo-sub{
-    margin-top:12px;
-    letter-spacing:7px;
-    font-size:12px;
-    color:#ddd;
-}
-
-.menu{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-}
-
-.menu a{
-    min-height:48px;
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:0 16px;
-    color:#c5c5c5;
-    border:1px solid transparent;
-    transition:.2s;
-}
-
-.menu a:hover,
-.menu a.active{
-    color:white;
-    background:linear-gradient(90deg,rgba(239,37,45,.20),rgba(239,37,45,.03));
-    border-color:#9d272c;
-    box-shadow:0 0 14px rgba(239,37,45,.12);
-}
-
-.menu .icon{
-    width:24px;
-    text-align:center;
-    color:#e34a4f;
-    font-size:18px;
-}
-
-.sidebar-tag{
-    margin-top:35px;
-    padding:25px 10px;
-    font-size:25px;
-    font-weight:800;
-    font-style:italic;
-    line-height:1.15;
-    color:#8f8f8f;
-    transform:rotate(-5deg);
-}
-
-/* =========================
-   PAGE
-========================= */
-
-.page{
-    margin-left:250px;
-    min-height:100vh;
-    background:
-        radial-gradient(circle at 50% 0%,#241416 0,#0a0a0b 38%,#050505 80%);
-}
-
-/* =========================
-   TOP BAR
-========================= */
-
-.topbar{
-    height:62px;
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    gap:24px;
-    padding:0 28px;
-    background:rgba(5,5,5,.94);
-    border-bottom:1px solid #39191b;
-}
-
-.server-online{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    font-size:13px;
-}
-
-.online-dot{
-    width:11px;
-    height:11px;
-    border-radius:50%;
-    background:var(--green);
-    box-shadow:0 0 10px var(--green);
-}
-
-.welcome{
-    color:#d6d6d6;
-    font-size:13px;
-    padding-left:22px;
-    border-left:1px solid #3b1d1f;
-}
-
-.social{
-    color:var(--red);
-    font-weight:900;
-    letter-spacing:9px;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    position:relative;
-    min-height:485px;
-    background:
-        linear-gradient(90deg,rgba(0,0,0,.08),rgba(0,0,0,.02)),
-        url("Carnivore-chaos-heros.png") center 42%/cover no-repeat;
-    border-bottom:1px solid #6c272b;
-    overflow:hidden;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to bottom,
-        rgba(0,0,0,.05),
-        rgba(0,0,0,.02) 65%,
-        rgba(0,0,0,.55)
-    );
-    pointer-events:none;
-}
-/* CLICKABLE HERO BUTTONS */
-.hero-click{
-    position:absolute;
-    z-index:10;
-    bottom:35px;
-    height:58px;
-    display:block;
-    cursor:pointer;
-}
-
-.enter-chaos-click{
-    left:27%;
-    width:275px;
-}
-
-.dino-market-click{
-    left:54%;
-    width:275px;
-}
-
-.hero-click:hover{
-    background:rgba(255,0,0,.08);
-    box-shadow:0 0 20px rgba(239,37,45,.35);
-}
-
-
-/* =========================
-   MAIN CONTENT
-========================= */
-
-.content{
-    padding:14px 25px 30px;
-}
-
-/* STATS */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-}
-
-.stat{
-    min-height:88px;
-    border:1px solid var(--border);
-    background:linear-gradient(135deg,#151515,#0b0b0c);
-    display:flex;
-    align-items:center;
-    padding:17px 22px;
-    gap:18px;
-}
-
-.stat-icon{
-    font-size:34px;
-    opacity:.85;
-}
-
-.stat-label{
-    font-size:11px;
-    color:#d0d0d0;
-    letter-spacing:.5px;
-    margin-bottom:5px;
-}
-
-.stat-value{
-    font-size:25px;
-    font-weight:900;
-}
-
-.stat-value.green{
-    color:var(--green);
-}
-
-/* FEATURE CARDS */
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-    margin-top:15px;
-}
-
-.feature{
-    position:relative;
-    min-height:164px;
-    padding:24px 27px;
-    border:1px solid var(--border);
-    background:
-        radial-gradient(circle at 85% 50%,rgba(100,15,15,.25),transparent 35%),
-        linear-gradient(135deg,#120909,#090909);
-    overflow:hidden;
-}
-
-.feature.prime{
-    background:
-        radial-gradient(circle at 75% 40%,rgba(190,137,20,.28),transparent 42%),
-        linear-gradient(135deg,#151006,#090909);
-    border-color:#755c26;
-}
-
-.feature.mutations{
-    background:
-        radial-gradient(circle at 90% 50%,rgba(175,0,30,.22),transparent 38%),
-        linear-gradient(135deg,#13080a,#090909);
-}
-
-.feature h2{
-    font-size:19px;
-    margin-bottom:15px;
-    letter-spacing:.5px;
-}
-
-.feature.prime h2{
-    color:var(--gold);
-}
-
-.feature p{
-    color:#c3c3c3;
-    font-size:13px;
-    line-height:1.45;
-    max-width:300px;
-}
-
-.feature-link{
-    display:inline-block;
-    margin-top:16px;
-    color:#ff4449;
-    font-size:13px;
-    font-weight:900;
-}
-
-.prime .feature-link{
-    color:var(--gold);
-}
-
-/* =========================
-   BOTTOM SERVER STRIP
-========================= */
-
-.server-strip{
-    margin-top:16px;
-    min-height:145px;
-    border:1px solid var(--border);
-    display:grid;
-    grid-template-columns:1fr 1.4fr 1fr;
-    background:
-        linear-gradient(90deg,#0d0d0d,#121212,#080808);
-}
-
-.server-block{
-    padding:25px 30px;
-}
-
-.server-title{
-    color:#aaa;
-    font-size:12px;
-    letter-spacing:2px;
-}
-
-.server-status{
-    margin-top:12px;
-    display:flex;
-    align-items:center;
-    gap:14px;
-    color:var(--green);
-    font-size:22px;
-    font-weight:900;
-}
-
-.status-light{
-    width:20px;
-    height:20px;
-    border-radius:50%;
-    background:var(--green);
-    box-shadow:0 0 14px var(--green);
-}
-
-.server-small{
-    margin-top:12px;
-    color:#888;
-    letter-spacing:2px;
-    font-size:11px;
-}
-
-.quote{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:25px;
-    color:#a7a7a7;
-    font-size:19px;
-    font-style:italic;
-    border-left:1px solid #2d2021;
-    border-right:1px solid #2d2021;
-}
-
-.discord{
-    padding:25px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.discord-title{
-    font-size:16px;
-    font-weight:800;
-}
-
-.discord-sub{
-    color:#8e8e8e;
-    font-size:11px;
-    line-height:1.5;
-    margin:8px 0 14px;
-}
-
-.discord-btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:42px;
-    border:1px solid #a7252a;
-    background:linear-gradient(90deg,#73080b,#d31319,#73080b);
-    color:#fff;
-    font-size:12px;
-    font-weight:900;
-    cursor:pointer;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    text-align:center;
-    color:#666;
-    font-size:10px;
-    letter-spacing:2px;
-    padding:19px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1100px){
-    .sidebar{
-        width:210px;
-    }
-
-    .page{
-        margin-left:210px;
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .features{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:750px){
-    .sidebar{
-        position:relative;
-        width:100%;
-        height:auto;
-    }
-
-    .sidebar-tag{
-        display:none;
-    }
-
-    .page{
-        margin-left:0;
-    }
-
-    .menu{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .hero{
-        min-height:430px;
-    }
-
-    .hero-top-text{
-        display:none;
-    }
-
-    .hero-actions{
-        width:90%;
-        flex-direction:column;
-        gap:10px;
-    }
-
-    .hero-btn{
-        width:100%;
-    }
-
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .server-strip{
-        grid-template-columns:1fr;
-    }
-
-    .quote{
-        border-left:0;
-        border-right:0;
-        border-top:1px solid #2d2021;
-        border-bottom:1px solid #2d2021;
-    }
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<aside class="sidebar">
+<div class="website">
 
-    <div class="logo">
-        <div class="logo-main">
-            CARNIVORE
-            <span>CHAOS</span>
+    <!-- ========================================
+         LEFT SIDEBAR
+    ========================================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-carnivore">CARNIVORE</div>
+            <div class="logo-chaos">CHAOS</div>
+            <div class="logo-evrima">EVRIMA</div>
         </div>
-        <div class="logo-sub">EVRIMA</div>
+
+        <nav class="navigation">
+
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">⌂</span>
+                <span>HOME</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">♟</span>
+                <span>MY PROFILE</span>
+            </a>
+
+            <a href="dinosaurs.html" class="nav-item">
+                <span class="nav-icon">🦖</span>
+                <span>MY DINOSAURS</span>
+            </a>
+
+            <a href="market.html" class="nav-item">
+                <span class="nav-icon">🛒</span>
+                <span>DINO MARKET</span>
+            </a>
+
+            <a href="wallet.html" class="nav-item">
+                <span class="nav-icon">🪙</span>
+                <span>DINO DOLLARS</span>
+            </a>
+
+            <a href="mutations.html" class="nav-item">
+                <span class="nav-icon">🧬</span>
+                <span>MUTATIONS</span>
+            </a>
+
+            <a href="prime.html" class="nav-item">
+                <span class="nav-icon">♛</span>
+                <span>PRIME</span>
+            </a>
+
+            <a href="friends.html" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span>FRIENDS</span>
+            </a>
+
+            <a href="teleport.html" class="nav-item">
+                <span class="nav-icon">◎</span>
+                <span>TELEPORT</span>
+            </a>
+
+            <a href="achievements.html" class="nav-item">
+                <span class="nav-icon">🏆</span>
+                <span>ACHIEVEMENTS</span>
+            </a>
+
+            <a href="leaderboards.html" class="nav-item">
+                <span class="nav-icon">▥</span>
+                <span>LEADERBOARDS</span>
+            </a>
+
+            <a href="rules.html" class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>SERVER RULES</span>
+            </a>
+
+            <a href="discord.html" class="nav-item">
+                <span class="nav-icon">☁</span>
+                <span>DISCORD</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-quote">
+            <span>SURVIVE</span>
+            <span>HUNT</span>
+            <span>DOMINATE</span>
+        </div>
+
+    </aside>
+
+
+    <!-- ========================================
+         RIGHT SIDE
+    ========================================= -->
+
+    <div class="main-area">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-right">
+
+                <div class="server-indicator">
+                    <span class="green-dot"></span>
+                    SERVER ONLINE
+                </div>
+
+                <div class="top-divider"></div>
+
+                <a href="profile.html" class="welcome-user">
+                    👤 &nbsp; WELCOME, SURVIVOR
+                    <span class="arrow">⌄</span>
+                </a>
+
+                <div class="top-divider"></div>
+
+                <a href="discord.html" class="social-link">◉</a>
+                <a href="#" class="social-link">◉</a>
+                <a href="#" class="social-link">▶</a>
+
+            </div>
+
+        </header>
+
+
+        <!-- ========================================
+             HERO
+        ========================================= -->
+
+        <section class="hero">
+
+            <div class="hero-shade"></div>
+
+            <div class="hero-tagline">
+                SURVIVE &nbsp;•&nbsp; HUNT &nbsp;•&nbsp; DOMINATE
+            </div>
+
+            <div class="hero-center">
+
+                <div class="hero-logo">
+                    <div class="hero-carnivore">CARNIVORE</div>
+                    <div class="hero-chaos">CHAOS</div>
+                    <div class="hero-evrima">EVRIMA</div>
+                </div>
+
+                <div class="hero-buttons">
+
+                    <a href="dinosaurs.html"
+                       class="hero-button primary">
+                        ENTER THE CHAOS
+                    </a>
+
+                    <a href="market.html"
+                       class="hero-button">
+                        DINO MARKET
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-left-writing">
+                SAME<br>
+                THIRST.<br>
+                DIFFERENT<br>
+                PREY.
+            </div>
+
+            <div class="hero-right-writing">
+                LET<br>
+                CHAOS<br>
+                REIGN
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             CONTENT
+        ========================================= -->
+
+        <main class="content">
+
+
+            <!-- SERVER STATS -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div class="stat-info">
+
+                        <div class="stat-title">
+                            PLAYERS ONLINE
+                        </div>
+
+                        <div
+                            class="stat-number green"
+                            id="playersOnline">
+                            —
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🦖
+                    </div>
+
+                    <div class="stat-info">
+
+                        <div class="stat-title">
+                            DINOS ALIVE
+                        </div>
+
+                        <div
+                            class="stat-number"
+                            id="dinosAlive">
+                            —
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        💀
+                    </div>
+
+                    <div class="stat-info">
+
+                        <div class="stat-title">
+                            KILLS TODAY
+                        </div>
+
+                        <div
+                            class="stat-number"
+                            id="killsToday">
+                            —
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🪙
+                    </div>
+
+                    <div class="stat-info">
+
+                        <div class="stat-title">
+                            DD EARNED TODAY
+                        </div>
+
+                        <div
+                            class="stat-number"
+                            id="ddEarned">
+                            —
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================================
+                 FEATURE CARDS
+            ========================================= -->
+
+            <section class="features">
+
+
+                <!-- DINO MARKET -->
+
+                <a href="market.html"
+                   class="feature-card market-feature">
+
+                    <div class="feature-content">
+
+                        <h2>
+                            <span>🛒</span>
+                            DINO MARKET
+                        </h2>
+
+                        <p>
+                            Purchase dinosaurs at 75% growth
+                            using your Dino Dollars.
+                        </p>
+
+                        <strong>
+                            ENTER MARKET →
+                        </strong>
+
+                    </div>
+
+                    <div class="feature-dino">
+                        🦖
+                    </div>
+
+                </a>
+
+
+                <!-- PRIME -->
+
+                <a href="prime.html"
+                   class="feature-card prime-feature">
+
+                    <div class="feature-content">
+
+                        <h2>
+                            <span>♛</span>
+                            GO PRIME
+                        </h2>
+
+                        <p>
+                            Upgrade your dinosaur to Prime.
+                            No requirements. Pay the price
+                            and unleash the beast.
+                        </p>
+
+                        <strong>
+                            VIEW PRIME →
+                        </strong>
+
+                    </div>
+
+                    <div class="feature-dino">
+                        🦖
+                    </div>
+
+                </a>
+
+
+                <!-- MUTATIONS -->
+
+                <a href="mutations.html"
+                   class="feature-card mutation-feature">
+
+                    <div class="feature-content">
+
+                        <h2>
+                            <span>🧬</span>
+                            MUTATIONS
+                        </h2>
+
+                        <p>
+                            Build your dinosaur with purchasable
+                            mutations and create your perfect
+                            survivor.
+                        </p>
+
+                        <strong>
+                            VIEW MUTATIONS →
+                        </strong>
+
+                    </div>
+
+                    <div class="mutation-decoration">
+                        🧬
+                    </div>
+
+                </a>
+
+            </section>
+
+
+            <!-- ========================================
+                 SERVER / DISCORD STRIP
+            ========================================= -->
+
+            <section class="bottom-panel">
+
+
+                <!-- SERVER STATUS -->
+
+                <div class="server-box">
+
+                    <div class="bottom-title">
+                        SERVER STATUS
+                    </div>
+
+                    <div class="server-online-large">
+
+                        <span class="large-green-dot"></span>
+
+                        <strong>
+                            ONLINE
+                        </strong>
+
+                    </div>
+
+                    <div class="server-details">
+                        EVRIMA &nbsp;|&nbsp; MODDED &nbsp;|&nbsp; 24/7
+                    </div>
+
+                </div>
+
+
+                <!-- CENTER QUOTE -->
+
+                <div class="bottom-quote">
+
+                    <div>
+                        “IN THIS WORLD,<br>
+                        YOU'RE EITHER THE HUNTER<br>
+                        OR THE PREY.”
+                    </div>
+
+                </div>
+
+
+                <!-- DISCORD -->
+
+                <div class="discord-box">
+
+                    <div class="discord-icon">
+                        🎮
+                    </div>
+
+                    <div class="discord-info">
+
+                        <h3>
+                            JOIN OUR DISCORD
+                        </h3>
+
+                        <p>
+                            COMMUNITY • EVENTS • SUPPORT<br>
+                            AND MORE
+                        </p>
+
+                        <a href="discord.html"
+                           class="discord-button">
+                            JOIN DISCORD →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- ========================================
+             FOOTER
+        ========================================= -->
+
+        <footer>
+
+            CARNIVORE CHAOS
+            <span>•</span>
+            EVRIMA COMMUNITY
+
+        </footer>
+
+
     </div>
-
-    <nav class="menu">
-
-        <a class="active" href="index.html">
-            <span class="icon">⌂</span>
-            <span>HOME</span>
-        </a>
-
-        <a href="profile.html">
-            <span class="icon">♟</span>
-            <span>MY PROFILE</span>
-        </a>
-
-        <a href="dinosaurs.html">
-            <span class="icon">🦖</span>
-            <span>MY DINOSAURS</span>
-        </a>
-
-        <a href="market.html">
-            <span class="icon">🛒</span>
-            <span>DINO MARKET</span>
-        </a>
-
-        <a href="wallet.html">
-            <span class="icon">🪙</span>
-            <span>DINO DOLLARS</span>
-        </a>
-
-        <a href="mutations.html">
-            <span class="icon">🧬</span>
-            <span>MUTATIONS</span>
-        </a>
-
-        <a href="prime.html">
-            <span class="icon">♛</span>
-            <span>PRIME</span>
-        </a>
-
-        <a href="friends.html">
-            <span class="icon">♟♟</span>
-            <span>FRIENDS</span>
-        </a>
-
-        <a href="teleport.html">
-            <span class="icon">◉</span>
-            <span>TELEPORT</span>
-        </a>
-
-        <a href="achievements.html">
-            <span class="icon">🏆</span>
-            <span>ACHIEVEMENTS</span>
-        </a>
-
-        <a href="leaderboards.html">
-            <span class="icon">▥</span>
-            <span>LEADERBOARDS</span>
-        </a>
-
-        <a href="rules.html">
-            <span class="icon">▤</span>
-            <span>SERVER RULES</span>
-        </a>
-
-        <a href="#" id="discordMenu">
-            <span class="icon">☁</span>
-            <span>DISCORD</span>
-        </a>
-
-    </nav>
-
-    <div class="sidebar-tag">
-        SURVIVE<br>
-        HUNT<br>
-        DOMINATE
-    </div>
-
-</aside>
-
-
-<!-- WEBSITE -->
-<div class="page">
-
-    <!-- TOP BAR -->
-    <header class="topbar">
-
-        <div class="server-online">
-            <span class="online-dot"></span>
-            SERVER ONLINE
-        </div>
-
-        <div class="welcome">
-            👤 WELCOME, SURVIVOR ▾
-        </div>
-
-        <div class="social">
-            ● ● ●
-        </div>
-
-    </header>
-
-
-    <!-- HERO -->
-    <section class="hero">
-
-       <a class="hero-click enter-chaos-click" href="dinosaurs.html" aria-label="Enter the Chaos"></a>
-<a class="hero-click dino-market-click" href="market.html" aria-label="Dino Market"></a>
-    </section>
-
-
-    <main class="content">
-
-        <!-- STATS -->
-        <section class="stats">
-
-            <div class="stat">
-                <div class="stat-icon">👥</div>
-                <div>
-                    <div class="stat-label">PLAYERS ONLINE</div>
-                    <div class="stat-value green">—</div>
-                </div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-icon">🦖</div>
-                <div>
-                    <div class="stat-label">DINOS ALIVE</div>
-                    <div class="stat-value">—</div>
-                </div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-icon">💀</div>
-                <div>
-                    <div class="stat-label">KILLS TODAY</div>
-                    <div class="stat-value">—</div>
-                </div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-icon">🪙</div>
-                <div>
-                    <div class="stat-label">DD EARNED TODAY</div>
-                    <div class="stat-value">—</div>
-                </div>
-            </div>
-
-        </section>
-
-
-        <!-- FEATURE CARDS -->
-        <section class="features">
-
-            <div class="feature">
-                <h2>🛒 &nbsp; DINO MARKET</h2>
-
-                <p>
-                    Purchase dinosaurs at 75% growth
-                    using your Dino Dollars.
-                </p>
-
-                <a class="feature-link" href="market.html">
-                    ENTER MARKET →
-                </a>
-            </div>
-
-
-            <div class="feature prime">
-                <h2>♛ &nbsp; GO PRIME</h2>
-
-                <p>
-                    Upgrade your dinosaur to Prime.
-                    No requirements. Pay the price
-                    and unleash the beast.
-                </p>
-
-                <a class="feature-link" href="prime.html">
-                    VIEW PRIME →
-                </a>
-            </div>
-
-
-            <div class="feature mutations">
-                <h2>🧬 &nbsp; MUTATIONS</h2>
-
-                <p>
-                    Build your dinosaur with purchasable
-                    mutations and create your perfect survivor.
-                </p>
-
-                <a class="feature-link" href="mutations.html">
-                    VIEW MUTATIONS →
-                </a>
-            </div>
-
-        </section>
-
-
-        <!-- SERVER STRIP -->
-        <section class="server-strip">
-
-            <div class="server-block">
-
-                <div class="server-title">
-                    SERVER STATUS
-                </div>
-
-                <div class="server-status">
-                    <span class="status-light"></span>
-                    COMING SOON
-                </div>
-
-                <div class="server-small">
-                    EVRIMA | CARNIVORE CHAOS
-                </div>
-
-            </div>
-
-
-            <div class="quote">
-                “IN THIS WORLD, YOU'RE EITHER
-                THE HUNTER OR THE PREY.”
-            </div>
-
-
-            <div class="discord">
-
-                <div class="discord-title">
-                    ☁ &nbsp; JOIN OUR DISCORD
-                </div>
-
-                <div class="discord-sub">
-                    COMMUNITY • EVENTS • SUPPORT<br>
-                    AND MORE
-                </div>
-
-                <button class="discord-btn" id="discordButton">
-                    JOIN DISCORD →
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-        CARNIVORE CHAOS • EVRIMA COMMUNITY
-    </footer>
 
 </div>
 
 
+<!-- ========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
-/*
-==================================================
-CARNIVORE CHAOS
-Buttons are ready for their future pages.
-==================================================
-*/
+    /*
+        CARNIVORE CHAOS
 
-/* Discord
-   Later we will replace this with your real
-   Discord invite URL.
-*/
+        These values stay blank until
+        the Evrima server/backend is connected.
 
-function discordComingSoon(event){
-    event.preventDefault();
+        Later the backend will automatically
+        update:
 
-    alert(
-        "Carnivore Chaos Discord link will be connected here."
-    );
-}
+        - Players Online
+        - Dinosaurs Alive
+        - Kills Today
+        - DD Earned Today
+    */
 
-document
-    .getElementById("discordMenu")
-    .addEventListener("click", discordComingSoon);
+    const serverData = {
 
-document
-    .getElementById("discordButton")
-    .addEventListener("click", discordComingSoon);
+        playersOnline: "—",
+        dinosAlive: "—",
+        killsToday: "—",
+        ddEarned: "—"
+
+    };
+
+
+    document.getElementById("playersOnline").textContent =
+        serverData.playersOnline;
+
+    document.getElementById("dinosAlive").textContent =
+        serverData.dinosAlive;
+
+    document.getElementById("killsToday").textContent =
+        serverData.killsToday;
+
+    document.getElementById("ddEarned").textContent =
+        serverData.ddEarned;
 
 </script>
+
 
 </body>
 </html>
