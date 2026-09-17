@@ -200,7 +200,30 @@ a{
     );
     pointer-events:none;
 }
+/* CLICKABLE HERO BUTTONS */
+.hero-click{
+    position:absolute;
+    z-index:10;
+    bottom:35px;
+    height:58px;
+    display:block;
+    cursor:pointer;
+}
 
+.enter-chaos-click{
+    left:27%;
+    width:275px;
+}
+
+.dino-market-click{
+    left:54%;
+    width:275px;
+}
+
+.hero-click:hover{
+    background:rgba(255,0,0,.08);
+    box-shadow:0 0 20px rgba(239,37,45,.35);
+}
 
 
 /* =========================
@@ -612,22 +635,8 @@ footer{
     <!-- HERO -->
     <section class="hero">
 
-        <div class="hero-top-text">
-            SURVIVE • HUNT • DOMINATE
-        </div>
-
-        <div class="hero-actions">
-
-            <a class="hero-btn primary" href="dinosaurs.html">
-                ENTER THE CHAOS
-            </a>
-
-            <a class="hero-btn" href="market.html">
-                DINO MARKET
-            </a>
-
-        </div>
-
+       <a class="hero-click enter-chaos-click" href="dinosaurs.html" aria-label="Enter the Chaos"></a>
+<a class="hero-click dino-market-click" href="market.html" aria-label="Dino Market"></a>
     </section>
 
 
