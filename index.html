@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carnivore Chaos</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        radial-gradient(circle at 70% 20%, #3a0000 0%, transparent 35%),
+        linear-gradient(135deg, #030303, #100000, #050505);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    height: 85px;
+    background: rgba(5,5,5,.95);
+    border-bottom: 2px solid #8b0000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #d00000;
+}
+
+.steam {
+    background: #b30000;
+    border: none;
+    color: white;
+    padding: 13px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(255,0,0,.35);
+}
+
+/* LAYOUT */
+
+.layout {
+    display: flex;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 240px;
+    min-height: calc(100vh - 85px);
+    background: rgba(3,3,3,.95);
+    border-right: 1px solid #450000;
+    padding: 30px 15px;
+}
+
+.sidebar a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    padding: 13px 16px;
+    margin-bottom: 4px;
+    border-left: 3px solid transparent;
+    transition: .2s;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+    color: white;
+    background: #170000;
+    border-left-color: #e00000;
+}
+
+/* MAIN */
+
+main {
+    flex: 1;
+    padding: 55px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #3c0000;
+    padding: 55px;
+    background:
+        radial-gradient(circle at 80% 50%, rgba(180,0,0,.35), transparent 35%),
+        linear-gradient(100deg, #080808 25%, #190000 100%);
+}
+
+.hero::after {
+    content: "🦖";
+    position: absolute;
+    right: 8%;
+    font-size: 220px;
+    opacity: .25;
+    filter: drop-shadow(0 0 30px #c00000);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.hero-small {
+    color: #d00000;
+    letter-spacing: 6px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: .9;
+    letter-spacing: -3px;
+}
+
+h1 span {
+    color: #c60000;
+    text-shadow: 0 0 25px rgba(255,0,0,.4);
+}
+
+.tagline {
+    color: #aaa;
+    font-size: 18px;
+    margin: 25px 0;
+    letter-spacing: 3px;
+}
+
+.hero button {
+    background: #b40000;
+    border: 1px solid #ff2c2c;
+    color: white;
+    padding: 16px 25px;
+    margin-right: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.hero button:hover {
+    background: #e00000;
+    box-shadow: 0 0 30px rgba(255,0,0,.5);
+    transform: translateY(-2px);
+}
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat {
+    background: #090909;
+    border: 1px solid #291010;
+    padding: 25px;
+}
+
+.stat-name {
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.stat-number {
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 7px;
+}
+
+.red {
+    color: #e00000;
+}
+
+/* LOWER CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: linear-gradient(145deg,#0c0c0c,#120000);
+    border: 1px solid #351010;
+    padding: 30px;
+    min-height: 180px;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #888;
+    line-height: 1.6;
+}
+
+.card-link {
+    color: #e00000;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    .sidebar {
+        display:none;
+    }
+
+    main {
+        padding:20px;
+    }
+
+    .hero {
+        padding:30px;
+    }
+
+    .stats,
+    .cards {
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🦖 CARNIVORE <span>CHAOS</span>
+</div>
+
+<button class="steam">
+STEAM LOGIN
+</button>
+
+</header>
+
+<div class="layout">
+
+<nav class="sidebar">
+
+<a class="active" href="#">🏠 HOME</a>
+<a href="#">👤 MY PROFILE</a>
+<a href="#">🦖 MY DINOSAURS</a>
+<a href="#">🛒 DINO MARKET</a>
+<a href="#">💰 DINO DOLLARS</a>
+<a href="#">🧬 MUTATIONS</a>
+<a href="#">👑 PRIME</a>
+<a href="#">👥 FRIENDS</a>
+<a href="#">⚡ TELEPORT</a>
+<a href="#">🏆 ACHIEVEMENTS</a>
+<a href="#">📊 LEADERBOARDS</a>
+<a href="#">📜 SERVER RULES</a>
+<a href="#">💬 DISCORD</a>
+
+</nav>
+
+<main>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-small">
+WELCOME TO EVRIMA
+</div>
+
+<h1>
+CARNIVORE<br>
+<span>CHAOS</span>
+</h1>
+
+<div class="tagline">
+SURVIVE • HUNT • DOMINATE
+</div>
+
+<button>ENTER THE CHAOS</button>
+<button>DINO MARKET</button>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<div class="stat-name">PLAYERS ONLINE</div>
+<div class="stat-number red">0</div>
+</div>
+
+<div class="stat">
+<div class="stat-name">DINOS ALIVE</div>
+<div class="stat-number">0</div>
+</div>
+
+<div class="stat">
+<div class="stat-name">KILLS TODAY</div>
+<div class="stat-number">0</div>
+</div>
+
+<div class="stat">
+<div class="stat-name">DD EARNED TODAY</div>
+<div class="stat-number">0</div>
+</div>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+<h2>🦖 DINO MARKET</h2>
+<p>Purchase dinosaurs at 75% growth using your Dino Dollars.</p>
+<div class="card-link">ENTER MARKET →</div>
+</div>
+
+<div class="card">
+<h2>👑 GO PRIME</h2>
+<p>Upgrade your dinosaur to Prime. No requirements. Pay the price and unleash the beast.</p>
+<div class="card-link">VIEW PRIME →</div>
+</div>
+
+<div class="card">
+<h2>🧬 MUTATIONS</h2>
+<p>Build your dinosaur with purchasable mutations and create your perfect survivor.</p>
+<div class="card-link">VIEW MUTATIONS →</div>
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+</html>
