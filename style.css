@@ -448,7 +448,7 @@ button {
             rgba(0, 0, 0, .08),
             rgba(0, 0, 0, .01)
         ),
-        url("Carnivore-chaos-heros.png")
+        url("url("hero-bg.png")")
         center center / cover
         no-repeat;
 
@@ -1176,7 +1176,7 @@ button {
             rgba(0,0,0,.80),
             rgba(0,0,0,.25)
         ),
-        url("Carnivore-chaos-heros.png")
+        url("url("hero-bg.png")")
         center 55% / cover
         no-repeat;
 
