@@ -1,6 +1,6 @@
 /* =========================================================
-   CARNIVORE CHAOS — EVRIMA
-   COMPLETE HOMEPAGE DESIGN
+   CARNIVORE CHAOS — COMPLETE HOMEPAGE CSS
+   Fresh replacement stylesheet
 ========================================================= */
 
 * {
@@ -11,35 +11,56 @@
 
 :root {
     --black: #050505;
-    --dark: #090909;
-    --panel: #101010;
-    --panel2: #151515;
+    --black-soft: #090909;
+    --panel: #0d0d0d;
+    --panel-light: #121212;
 
-    --red: #ef2634;
-    --dark-red: #850b12;
-    --border-red: #7d171b;
+    --red: #e3262e;
+    --red-bright: #ff2d38;
+    --red-dark: #6d090d;
+
+    --gold: #f0c94c;
+    --green: #70e56f;
 
     --white: #f3f3f3;
-    --muted: #a7a7a7;
+    --grey: #a6a6a6;
+    --dark-grey: #686868;
 
-    --green: #6be56c;
-    --gold: #ffd74a;
+    --border: rgba(255, 255, 255, 0.16);
+    --red-border: rgba(230, 38, 46, 0.55);
 
     --sidebar-width: 250px;
+    --topbar-height: 64px;
 }
+
+
+/* =========================================================
+   BODY
+========================================================= */
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
     min-height: 100vh;
     background:
-        radial-gradient(circle at 50% 0%, #241010 0, transparent 30%),
-        #050505;
+        radial-gradient(
+            circle at 50% 0%,
+            #231010 0%,
+            #090909 35%,
+            #030303 100%
+        );
+
     color: var(--white);
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        "Arial Narrow",
+        "Roboto Condensed",
+        Arial,
+        Helvetica,
+        sans-serif;
+
     overflow-x: hidden;
 }
 
@@ -48,20 +69,18 @@ a {
     text-decoration: none;
 }
 
-
-/* =========================================================
-   WEBSITE SHELL
-========================================================= */
-
-.website {
-    width: 100%;
-    min-height: 100vh;
+button {
+    font: inherit;
 }
 
-.main-area {
-    margin-left: var(--sidebar-width);
+
+/* =========================================================
+   MAIN WEBSITE SHELL
+========================================================= */
+
+.site-shell {
+    width: 100%;
     min-height: 100vh;
-    background: #070707;
 }
 
 
@@ -71,6 +90,7 @@ a {
 
 .sidebar {
     position: fixed;
+
     left: 0;
     top: 0;
     bottom: 0;
@@ -79,129 +99,142 @@ a {
 
     background:
         linear-gradient(
-            rgba(5, 5, 5, 0.94),
-            rgba(5, 5, 5, 0.96)
-        ),
-        url("Carnivore-chaos-heros.png")
-        left center / auto 100% no-repeat;
+            90deg,
+            rgba(7, 7, 7, 0.99),
+            rgba(12, 12, 12, 0.98)
+        );
 
-    border-right: 1px solid #5d1b1d;
+    border-right: 1px solid rgba(225, 37, 45, 0.45);
 
     z-index: 100;
 
     display: flex;
     flex-direction: column;
 
-    padding: 18px 15px 20px;
+    padding: 22px 16px 25px;
 
-    overflow-y: auto;
+    box-shadow:
+        12px 0 35px rgba(0, 0, 0, 0.65);
 }
 
 
 /* =========================================================
-   SIDEBAR LOGO
+   LOGO
 ========================================================= */
 
-.sidebar-logo {
+.logo {
     text-align: center;
-    padding: 3px 4px 18px;
-    text-transform: uppercase;
+
+    margin-bottom: 15px;
+
+    line-height: 0.9;
+
+    user-select: none;
 }
 
 .logo-carnivore {
-    font-size: 27px;
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -1px;
+    color: #eeeeee;
 
-    color: #e7e7e7;
+    font-size: 28px;
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
 
     text-shadow:
-        2px 2px 0 #350506,
-        0 0 8px rgba(255,255,255,.18);
+        0 2px 2px #000,
+        0 0 12px rgba(255,255,255,.15);
 }
 
 .logo-chaos {
-    font-size: 34px;
-    font-weight: 900;
-    line-height: 0.9;
+    color: var(--red-bright);
 
-    color: #bd151d;
+    font-size: 31px;
+    font-weight: 1000;
+
+    letter-spacing: -1px;
 
     text-shadow:
-        2px 2px 0 #350000,
-        0 0 13px rgba(220, 20, 30, .35);
+        0 0 10px rgba(255, 20, 30, .35),
+        0 3px 2px #000;
 }
 
 .logo-evrima {
-    margin-top: 11px;
-
-    font-size: 13px;
-    letter-spacing: 7px;
-
     color: #d6d6d6;
+
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    letter-spacing: 7px;
 }
 
 
 /* =========================================================
-   NAVIGATION
+   SIDEBAR NAVIGATION
 ========================================================= */
 
-.navigation {
+.sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+
+    gap: 3px;
 }
 
 .nav-item {
-    position: relative;
-
-    min-height: 46px;
+    min-height: 48px;
 
     display: flex;
     align-items: center;
 
-    gap: 13px;
+    gap: 14px;
 
     padding: 0 15px;
 
-    color: #c9c9c9;
+    color: #bdbdbd;
 
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
+
+    letter-spacing: .3px;
 
     border: 1px solid transparent;
 
+    position: relative;
+
     transition:
-        background .2s ease,
-        border .2s ease,
-        color .2s ease,
-        transform .2s ease;
+        background .18s ease,
+        border .18s ease,
+        color .18s ease,
+        transform .18s ease;
 }
 
 .nav-icon {
-    width: 25px;
+    width: 24px;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    color: #e84b42;
+    color: #e94a42;
 
     font-size: 18px;
+
+    filter:
+        drop-shadow(0 0 5px rgba(232, 41, 48, .25));
 }
 
 .nav-item:hover {
-    color: #fff;
+    color: white;
 
     background:
         linear-gradient(
             90deg,
-            rgba(166, 12, 18, .24),
-            rgba(75, 0, 4, .08)
+            rgba(190, 22, 27, .24),
+            rgba(190, 22, 27, .05)
         );
 
-    border-color: rgba(223, 40, 48, .35);
+    border-color:
+        rgba(225, 37, 45, .35);
 
     transform: translateX(2px);
 }
@@ -209,18 +242,19 @@ a {
 .nav-item.active {
     color: white;
 
-    border: 1px solid #d62d35;
-
     background:
         linear-gradient(
             90deg,
-            rgba(180, 17, 25, .40),
-            rgba(76, 0, 4, .18)
+            rgba(194, 20, 26, .48),
+            rgba(120, 10, 14, .13)
         );
 
+    border-color:
+        rgba(255, 51, 59, .75);
+
     box-shadow:
-        inset 0 0 20px rgba(255, 0, 20, .08),
-        0 0 12px rgba(224, 31, 42, .13);
+        inset 0 0 18px rgba(225, 37, 45, .10),
+        0 0 12px rgba(225, 37, 45, .08);
 }
 
 .nav-item.active::before {
@@ -232,39 +266,55 @@ a {
     top: 8px;
     bottom: 8px;
 
-    width: 2px;
+    width: 3px;
 
-    background: #ff3340;
+    background: var(--red-bright);
 
-    box-shadow: 0 0 8px #ff2533;
+    box-shadow:
+        0 0 10px var(--red-bright);
 }
 
 
 /* =========================================================
-   SIDEBAR BOTTOM
+   SIDEBAR BOTTOM SLOGAN
 ========================================================= */
 
-.sidebar-quote {
+.sidebar-slogan {
     margin-top: auto;
 
-    padding: 25px 10px 6px;
+    padding:
+        28px
+        8px
+        0;
 
-    display: flex;
-    flex-direction: column;
+    color: rgba(255, 255, 255, .55);
 
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 900;
     font-style: italic;
 
-    line-height: 1.03;
+    line-height: .9;
 
-    color: #c5b4b4;
-
-    transform: rotate(-4deg);
+    transform: rotate(-5deg);
 
     text-shadow:
-        2px 2px 0 #260506,
-        0 0 8px rgba(255,255,255,.08);
+        0 2px 2px #000;
+}
+
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.main-area {
+    margin-left: var(--sidebar-width);
+
+    width:
+        calc(100% - var(--sidebar-width));
+
+    min-height: 100vh;
+
+    background: #060606;
 }
 
 
@@ -273,40 +323,45 @@ a {
 ========================================================= */
 
 .topbar {
-    height: 60px;
-
-    position: relative;
+    height: var(--topbar-height);
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
 
-    padding: 0 34px;
+    padding: 0 32px;
 
     background:
         linear-gradient(
             90deg,
-            rgba(7,7,7,.72),
-            rgba(7,7,7,.98)
+            rgba(7, 7, 7, .95),
+            rgba(3, 3, 3, .99)
         );
 
-    border-bottom: 1px solid #341011;
+    border-bottom:
+        1px solid rgba(255, 255, 255, .08);
+
+    position: relative;
 
     z-index: 20;
 }
 
 .topbar-right {
-    display: flex;
-    align-items: center;
-
-    gap: 17px;
+    margin-left: auto;
 
     height: 100%;
 
+    display: flex;
+    align-items: center;
+
+    gap: 19px;
+
     font-size: 12px;
+
+    letter-spacing: .4px;
 }
 
-.server-indicator {
+.server-online {
     display: flex;
     align-items: center;
 
@@ -315,53 +370,62 @@ a {
     white-space: nowrap;
 }
 
-.green-dot {
+.online-dot {
     width: 10px;
     height: 10px;
 
     border-radius: 50%;
 
-    background: #70e969;
+    background: #73e56e;
 
     box-shadow:
-        0 0 5px #70e969,
-        0 0 13px rgba(112,233,105,.65);
+        0 0 6px #73e56e,
+        0 0 13px rgba(115, 229, 110, .55);
 }
 
 .top-divider {
     width: 1px;
-    height: 25px;
+    height: 22px;
 
-    background: #542024;
+    background:
+        rgba(255, 255, 255, .15);
 }
 
-.welcome-user {
-    color: #e1e1e1;
+.welcome {
+    color: #ddd;
 
-    transition: color .2s ease;
-}
-
-.welcome-user:hover {
-    color: white;
+    white-space: nowrap;
 }
 
 .arrow {
-    margin-left: 5px;
+    margin-left: 8px;
+
+    color: #aaa;
 }
 
-.social-link {
-    color: #e22d38;
+.social-icons {
+    display: flex;
+    align-items: center;
 
-    font-size: 18px;
+    gap: 16px;
+}
+
+.social-icons a {
+    color: var(--red-bright);
+
+    font-size: 19px;
 
     transition:
-        color .2s ease,
-        transform .2s ease;
+        transform .2s ease,
+        color .2s ease;
 }
 
-.social-link:hover {
-    color: #ff4651;
-    transform: translateY(-2px);
+.social-icons a:hover {
+    color: white;
+
+    transform:
+        translateY(-2px)
+        scale(1.08);
 }
 
 
@@ -372,133 +436,163 @@ a {
 .hero {
     position: relative;
 
-    min-height: 490px;
+    width: 100%;
+
+    height: 485px;
 
     overflow: hidden;
-
-    border-bottom: 1px solid #7a171b;
-
-    background:
-        url("Carnivore-chaos-heros.png")
-        center 42% / cover no-repeat;
-}
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,.08),
-            rgba(0,0,0,.02) 50%,
-            rgba(0,0,0,.12)
-        );
+            rgba(0, 0, 0, .08),
+            rgba(0, 0, 0, .01)
+        ),
+        url("Carnivore-chaos-heros.png")
+        center center / cover
+        no-repeat;
 
-    z-index: 1;
+    border-bottom:
+        1px solid rgba(228, 37, 46, .7);
 }
 
-.hero-shade {
+
+/* HERO DARKENING */
+
+.hero-overlay {
     position: absolute;
+
     inset: 0;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,.10),
-            rgba(0,0,0,.02) 58%,
-            rgba(0,0,0,.58)
+            rgba(0, 0, 0, .10) 0%,
+            rgba(0, 0, 0, .02) 45%,
+            rgba(0, 0, 0, .15) 68%,
+            rgba(0, 0, 0, .75) 100%
         );
 
-    z-index: 2;
-
     pointer-events: none;
-}
 
-.hero-tagline {
-    position: absolute;
-
-    right: 9%;
-    top: 27px;
-
-    z-index: 4;
-
-    font-size: 14px;
-    letter-spacing: 8px;
-
-    color: #e4e4e4;
-
-    text-shadow: 0 2px 5px black;
+    z-index: 1;
 }
 
 
 /* =========================================================
-   HERO CENTER LOGO
+   HERO TAGLINE
+========================================================= */
+
+.hero-tagline {
+    position: absolute;
+
+    right: 10%;
+
+    top: 24px;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: #e5e5e5;
+
+    font-size: 13px;
+
+    letter-spacing: 7px;
+
+    text-shadow:
+        0 2px 5px #000;
+}
+
+.hero-tagline span {
+    color: #777;
+
+    letter-spacing: 0;
+}
+
+
+/* =========================================================
+   HERO CENTER
 ========================================================= */
 
 .hero-center {
     position: absolute;
 
+    z-index: 4;
+
     left: 50%;
-    bottom: 31px;
+    bottom: 32px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    width: min(660px, 65%);
+    width: 650px;
 
-    z-index: 5;
+    max-width:
+        calc(100% - 100px);
 
     text-align: center;
 }
 
-.hero-logo {
-    margin-bottom: 18px;
 
-    text-transform: uppercase;
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero-title {
+    margin-bottom: 20px;
+
+    text-align: center;
 
     text-shadow:
-        3px 3px 0 #170000,
-        0 0 18px rgba(0,0,0,.9);
+        0 5px 4px rgba(0, 0, 0, .95);
 }
 
-.hero-carnivore {
-    font-size: clamp(45px, 5vw, 74px);
+.title-carnivore {
+    color: #e8e8e8;
 
-    line-height: .77;
+    font-size: 58px;
 
-    font-weight: 900;
-
-    letter-spacing: -4px;
-
-    color: #e8e2dc;
-}
-
-.hero-chaos {
-    font-size: clamp(48px, 5.5vw, 82px);
-
-    line-height: .86;
-
-    font-weight: 900;
+    font-weight: 1000;
 
     letter-spacing: -3px;
 
-    color: #b8121a;
+    line-height: .78;
 
-    text-shadow:
-        3px 4px 0 #320000,
-        0 0 18px rgba(220,0,15,.35);
+    transform: scaleX(1.05);
 }
 
-.hero-evrima {
-    margin-top: 8px;
+.title-chaos {
+    color: #c9141c;
 
-    font-size: 20px;
+    font-size: 65px;
 
-    letter-spacing: 14px;
+    font-weight: 1000;
+
+    letter-spacing: -4px;
+
+    line-height: .9;
+
+    transform: scaleX(1.03);
+
+    text-shadow:
+        0 5px 4px rgba(0, 0, 0, .9),
+        0 0 15px rgba(255, 0, 10, .25);
+}
+
+.title-evrima {
+    margin-top: 9px;
 
     color: #dedede;
+
+    font-size: 17px;
+
+    letter-spacing: 12px;
+
+    padding-left: 12px;
 }
 
 
@@ -509,11 +603,10 @@ a {
 .hero-buttons {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        repeat(2, 1fr);
 
-    gap: 26px;
-
-    width: 100%;
+    gap: 24px;
 }
 
 .hero-button {
@@ -523,121 +616,132 @@ a {
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #a88e8e;
+    border:
+        1px solid rgba(255, 255, 255, .65);
 
     background:
         linear-gradient(
             180deg,
-            rgba(19,19,19,.88),
-            rgba(5,5,5,.92)
+            rgba(15, 15, 15, .87),
+            rgba(5, 5, 5, .93)
         );
 
     color: white;
 
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 900;
 
     letter-spacing: .5px;
 
     box-shadow:
-        inset 0 0 20px rgba(255,255,255,.025),
-        0 4px 12px rgba(0,0,0,.55);
+        inset 0 0 15px rgba(255,255,255,.03),
+        0 5px 18px rgba(0,0,0,.55);
 
     transition:
-        transform .2s ease,
-        border .2s ease,
-        box-shadow .2s ease;
+        transform .18s ease,
+        border .18s ease,
+        box-shadow .18s ease;
 }
 
 .hero-button.primary {
-    border-color: #e62934;
+    border-color:
+        rgba(255, 37, 45, .9);
 
     background:
         linear-gradient(
             180deg,
-            rgba(135, 8, 13, .90),
-            rgba(62, 2, 5, .95)
+            rgba(194, 16, 23, .92),
+            rgba(109, 5, 10, .96)
         );
 
     box-shadow:
-        inset 0 0 22px rgba(255, 35, 45, .17),
-        0 0 15px rgba(228, 28, 38, .45);
+        inset 0 0 15px rgba(255,255,255,.06),
+        0 0 17px rgba(226, 35, 44, .45);
 }
 
 .hero-button:hover {
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 
-    border-color: #ff3945;
+    border-color: white;
 
     box-shadow:
-        0 0 20px rgba(235, 34, 45, .42);
+        0 0 20px rgba(230, 37, 45, .55);
 }
 
 
 /* =========================================================
-   HERO WRITING
+   HERO HANDWRITING
 ========================================================= */
 
-.hero-left-writing,
-.hero-right-writing {
+.hero-writing {
     position: absolute;
 
-    z-index: 4;
+    z-index: 3;
 
-    color: rgba(220,220,220,.75);
+    color:
+        rgba(235, 235, 235, .70);
 
-    font-weight: 800;
+    font-size: 26px;
+
+    font-weight: 900;
+
     font-style: italic;
 
-    line-height: .95;
+    line-height: .9;
 
-    text-shadow: 2px 2px 4px #000;
+    text-shadow:
+        0 3px 3px #000;
+
+    pointer-events: none;
 }
 
-.hero-left-writing {
-    left: 27px;
-    bottom: 85px;
+.hero-writing-left {
+    left: 28px;
 
-    font-size: 23px;
+    bottom: 65px;
 
-    transform: rotate(-11deg);
+    transform: rotate(-12deg);
 }
 
-.hero-right-writing {
+.hero-writing-right {
     right: 25px;
-    bottom: 48px;
 
-    font-size: 25px;
+    bottom: 55px;
 
-    transform: rotate(7deg);
+    transform: rotate(8deg);
 }
 
 
 /* =========================================================
-   CONTENT
+   DASHBOARD
 ========================================================= */
 
-.content {
-    padding: 14px 25px 26px;
+.dashboard {
+    padding:
+        16px
+        25px
+        25px;
 
     background:
         radial-gradient(
-            circle at 50% 0%,
-            rgba(80,8,8,.13),
-            transparent 38%
+            circle at 50% 0,
+            rgba(92, 7, 10, .12),
+            transparent 35%
         ),
-        #070707;
+        #060606;
 }
 
 
 /* =========================================================
-   STATS
+   STAT GRID
 ========================================================= */
 
-.stats {
+.stats-grid {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
     gap: 14px;
 }
@@ -650,67 +754,71 @@ a {
 
     gap: 18px;
 
-    padding: 15px 20px;
+    padding:
+        15px
+        22px;
+
+    border:
+        1px solid var(--border);
 
     background:
         linear-gradient(
             135deg,
             #141414,
-            #090909
+            #080808
         );
 
-    border: 1px solid #642024;
-
     box-shadow:
-        inset 0 0 20px rgba(255,255,255,.015),
-        0 4px 12px rgba(0,0,0,.28);
+        inset 0 0 22px rgba(255,255,255,.015);
 }
 
 .stat-icon {
-    width: 52px;
-
-    flex-shrink: 0;
-
-    font-size: 34px;
+    width: 48px;
 
     text-align: center;
 
-    filter: grayscale(.25);
+    font-size: 31px;
+
+    filter:
+        grayscale(.25);
 }
 
-.stat-title {
-    margin-bottom: 5px;
+.stat-label {
+    margin-bottom: 4px;
+
+    color: #d4d4d4;
 
     font-size: 11px;
 
-    color: #d1d1d1;
-
-    letter-spacing: .5px;
+    letter-spacing: .4px;
 }
 
-.stat-number {
+.stat-value {
+    color: white;
+
     font-size: 27px;
 
     font-weight: 900;
-
-    line-height: 1;
 }
 
-.stat-number.green {
+.stat-value.green {
     color: var(--green);
 
-    text-shadow: 0 0 9px rgba(107,229,108,.25);
+    text-shadow:
+        0 0 8px
+        rgba(112, 229, 111, .25);
 }
 
 
 /* =========================================================
-   FEATURE CARDS
+   FEATURE GRID
 ========================================================= */
 
-.features {
+.feature-grid {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 14px;
 
@@ -720,25 +828,28 @@ a {
 .feature-card {
     position: relative;
 
-    min-height: 164px;
+    min-height: 165px;
 
-    padding: 23px 26px;
+    padding:
+        23px
+        27px;
 
     overflow: hidden;
+
+    border:
+        1px solid
+        rgba(222, 41, 48, .45);
 
     background:
         linear-gradient(
             135deg,
-            #120909,
+            #130808,
             #080808
         );
 
-    border: 1px solid #6c1b20;
-
-    transition:
-        transform .2s ease,
-        border .2s ease,
-        box-shadow .2s ease;
+    box-shadow:
+        inset 0 0 35px
+        rgba(255, 0, 10, .04);
 }
 
 .feature-card::after {
@@ -752,155 +863,195 @@ a {
 
     background:
         radial-gradient(
-            circle at 90% 50%,
-            rgba(154, 14, 21, .22),
-            transparent 42%
+            circle at 85% 50%,
+            rgba(205, 26, 33, .18),
+            transparent 38%
         );
-}
-
-.feature-card:hover {
-    transform: translateY(-3px);
-
-    border-color: #d32a33;
-
-    box-shadow:
-        0 0 18px rgba(209, 29, 38, .17);
 }
 
 .feature-content {
     position: relative;
 
-    z-index: 4;
+    z-index: 3;
 
-    max-width: 72%;
+    max-width: 73%;
 }
 
-.feature-content h2 {
+.feature-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
     margin-bottom: 12px;
+}
+
+.feature-heading h2 {
+    color: white;
 
     font-size: 18px;
 
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
+    letter-spacing: .2px;
 }
 
-.feature-content h2 span {
-    font-size: 25px;
+.feature-icon {
+    color: var(--red-bright);
+
+    font-size: 27px;
 }
 
-.feature-content p {
-    margin-bottom: 14px;
+.feature-card p {
+    color: #d0d0d0;
 
-    color: #d1d1d1;
-
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 1.35;
+
+    margin-bottom: 15px;
 }
 
-.feature-content strong {
-    font-size: 12px;
+.feature-link {
+    color: var(--red-bright);
 
-    color: #ff3945;
+    font-size: 13px;
+
+    font-weight: 900;
+
+    transition:
+        color .18s ease,
+        letter-spacing .18s ease;
+}
+
+.feature-link:hover {
+    color: white;
+
+    letter-spacing: .5px;
 }
 
 
-/* MARKET */
+/* =========================================================
+   MARKET CARD
+========================================================= */
 
-.market-feature {
+.market-card {
     background:
         radial-gradient(
-            circle at 85% 50%,
-            rgba(112,8,11,.32),
-            transparent 37%
+            circle at 88% 55%,
+            rgba(166, 15, 21, .35),
+            transparent 40%
         ),
         linear-gradient(
             135deg,
-            #130808,
+            #140808,
             #070707
         );
 }
 
 
-/* PRIME */
+/* =========================================================
+   PRIME CARD
+========================================================= */
 
-.prime-feature {
-    border-color: #806828;
+.prime-card {
+    border-color:
+        rgba(236, 193, 61, .55);
 
     background:
         radial-gradient(
-            circle at 70% 45%,
-            rgba(171,126,16,.32),
-            transparent 48%
+            circle at 80% 50%,
+            rgba(169, 115, 10, .38),
+            transparent 43%
         ),
         linear-gradient(
             135deg,
-            #171307,
-            #080807
+            #171305,
+            #090805
         );
 }
 
-.prime-feature h2,
-.prime-feature strong {
-    color: var(--gold);
+.prime-card .feature-icon,
+.prime-card h2,
+.prime-link {
+    color: #f3d257;
 }
 
-.prime-feature:hover {
-    border-color: #c69f31;
-
-    box-shadow:
-        0 0 18px rgba(208,163,40,.17);
-}
-
-
-/* MUTATIONS */
-
-.mutation-feature {
+.prime-card::after {
     background:
         radial-gradient(
-            circle at 90% 50%,
-            rgba(181,0,45,.35),
-            transparent 44%
+            circle at 83% 45%,
+            rgba(218, 167, 35, .14),
+            transparent 40%
+        );
+}
+
+
+/* =========================================================
+   MUTATION CARD
+========================================================= */
+
+.mutation-card {
+    background:
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(163, 9, 44, .42),
+            transparent 43%
         ),
         linear-gradient(
             135deg,
             #16070b,
-            #080708
+            #070707
         );
 }
 
 .feature-dino {
     position: absolute;
 
-    right: 15px;
-    bottom: -12px;
+    right: 24px;
 
-    z-index: 3;
+    bottom: 18px;
 
-    font-size: 100px;
+    z-index: 2;
 
-    opacity: .42;
+    font-size: 76px;
 
-    filter: grayscale(1) contrast(1.4);
+    opacity: .7;
 
-    transform: scaleX(-1);
+    filter:
+        grayscale(.7)
+        contrast(1.25)
+        drop-shadow(
+            0 6px 10px
+            rgba(0,0,0,.8)
+        );
+
+    transform:
+        scaleX(-1);
 }
 
 .mutation-decoration {
     position: absolute;
 
-    right: -8px;
-    bottom: -15px;
+    right: 17px;
 
-    z-index: 3;
+    bottom: 15px;
 
-    font-size: 105px;
+    z-index: 2;
 
-    opacity: .45;
+    color: #e32443;
 
-    transform: rotate(-13deg);
+    font-size: 82px;
+
+    opacity: .75;
+
+    transform:
+        rotate(-15deg);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(222, 30, 58, .3)
+        );
 }
 
 
@@ -908,210 +1059,267 @@ a {
    BOTTOM SERVER PANEL
 ========================================================= */
 
-.bottom-panel {
-    min-height: 150px;
-
-    margin-top: 15px;
+.server-panel {
+    min-height: 155px;
 
     display: grid;
 
-    grid-template-columns: 1fr 1.25fr 1fr;
+    grid-template-columns:
+        28% 42% 30%;
 
-    overflow: hidden;
+    margin-top: 15px;
 
-    border: 1px solid #4e4e4e;
+    border:
+        1px solid
+        rgba(255, 255, 255, .24);
 
     background:
         linear-gradient(
             90deg,
-            #0d0d0d,
-            #131313,
+            #0c0c0c,
             #080808
         );
+
+    overflow: hidden;
 }
 
-.server-box {
-    padding: 27px 29px;
 
-    border-right: 1px solid rgba(255,255,255,.06);
+/* =========================================================
+   SERVER STATUS
+========================================================= */
+
+.server-status-block {
+    padding:
+        28px
+        28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,.08);
 }
 
-.bottom-title {
-    margin-bottom: 12px;
-
-    color: #c9c9c9;
+.bottom-label {
+    color: #c4c4c4;
 
     font-size: 11px;
 
     letter-spacing: 2px;
+
+    margin-bottom: 12px;
 }
 
-.server-online-large {
+.server-status-main {
     display: flex;
 
     align-items: center;
 
-    gap: 15px;
+    gap: 14px;
 
     color: var(--green);
 
     font-size: 23px;
+
+    font-weight: 900;
 }
 
-.large-green-dot {
-    width: 19px;
-    height: 19px;
-
-    flex-shrink: 0;
+.big-online-dot {
+    width: 20px;
+    height: 20px;
 
     border-radius: 50%;
 
     background: var(--green);
 
     box-shadow:
-        0 0 7px var(--green),
-        0 0 20px rgba(107,229,108,.42);
+        0 0 8px var(--green),
+        0 0 22px
+        rgba(112,229,111,.55);
 }
 
-.server-details {
-    margin-top: 15px;
-    margin-left: 34px;
+.server-description {
+    margin-top: 13px;
+
+    padding-left: 35px;
+
+    color: #8f8f8f;
 
     font-size: 11px;
-
-    color: #999;
 
     letter-spacing: 2px;
 }
 
 
 /* =========================================================
-   BOTTOM QUOTE
+   QUOTE
 ========================================================= */
 
-.bottom-quote {
+.server-quote {
     position: relative;
 
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    min-height: 150px;
+    justify-content: center;
 
     padding: 20px;
 
-    overflow: hidden;
-
-    text-align: center;
-
-    color: #b8b1b1;
-
-    font-size: 20px;
-    font-weight: 700;
-    font-style: italic;
-
-    line-height: 1.2;
-
-    text-shadow: 2px 2px 5px #000;
-
     background:
         linear-gradient(
-            rgba(8,8,8,.60),
-            rgba(8,8,8,.74)
+            90deg,
+            rgba(0,0,0,.80),
+            rgba(0,0,0,.25)
         ),
         url("Carnivore-chaos-heros.png")
-        center / cover no-repeat;
+        center 55% / cover
+        no-repeat;
+
+    overflow: hidden;
+}
+
+.server-quote::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,.48);
+}
+
+.quote-text {
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        rgba(225,225,225,.72);
+
+    font-size: 21px;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+    line-height: 1.05;
+
+    transform: rotate(-4deg);
+
+    text-shadow:
+        0 3px 4px #000;
 }
 
 
 /* =========================================================
-   DISCORD BOX
+   DISCORD PANEL
 ========================================================= */
 
-.discord-box {
+.discord-block {
     display: flex;
 
     align-items: center;
 
     gap: 18px;
 
-    padding: 24px;
-
-    border-left: 1px solid rgba(255,255,255,.06);
+    padding:
+        23px
+        24px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(10,10,10,.88),
-            rgba(5,5,5,.96)
+            #0b0b0b,
+            #080808
         );
 }
 
-.discord-icon {
-    align-self: flex-start;
-
-    margin-top: 3px;
-
-    font-size: 34px;
+.discord-logo {
+    font-size: 40px;
 }
 
-.discord-info h3 {
-    margin-bottom: 8px;
+.discord-info {
+    width: 100%;
+}
+
+.discord-title {
+    color: #eeeeee;
 
     font-size: 15px;
+
+    font-weight: 800;
+
+    margin-bottom: 7px;
 }
 
-.discord-info p {
-    margin-bottom: 15px;
+.discord-subtitle {
+    color: #858585;
 
-    color: #a7a7a7;
-
-    font-size: 10px;
-
-    line-height: 1.5;
+    font-size: 9px;
 
     letter-spacing: .5px;
+
+    line-height: 1.4;
+
+    margin-bottom: 14px;
 }
 
-.discord-button {
-    min-width: 175px;
+#discordButton {
+    min-width: 170px;
 
-    height: 39px;
+    height: 38px;
 
-    display: inline-flex;
+    padding: 0 18px;
 
-    align-items: center;
-    justify-content: center;
-
-    padding: 0 20px;
-
-    border: 1px solid #e12832;
+    border:
+        1px solid
+        rgba(239, 40, 47, .85);
 
     background:
         linear-gradient(
             180deg,
-            rgba(119,8,13,.95),
-            rgba(48,2,5,.95)
+            #8d0d13,
+            #500509
         );
 
     color: white;
 
     font-size: 11px;
 
+    font-weight: 900;
+
+    cursor: pointer;
+
     box-shadow:
-        0 0 12px rgba(222, 31, 41, .24);
+        0 0 12px
+        rgba(226, 37, 45, .20);
 
     transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        transform .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
 }
 
-.discord-button:hover {
-    transform: translateY(-2px);
+#discordButton:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        linear-gradient(
+            180deg,
+            #c2161e,
+            #76080d
+        );
 
     box-shadow:
-        0 0 18px rgba(230, 32, 43, .42);
+        0 0 20px
+        rgba(226, 37, 45, .45);
 }
 
 
@@ -1120,64 +1328,215 @@ a {
 ========================================================= */
 
 footer {
-    padding: 18px 25px 25px;
+    padding: 22px;
 
-    color: #777;
+    text-align: center;
+
+    color: #575757;
+
+    background: #040404;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.05);
 
     font-size: 10px;
 
     letter-spacing: 2px;
-
-    text-align: center;
-
-    background: #070707;
-}
-
-footer span {
-    color: #8f1a20;
-
-    padding: 0 8px;
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   LARGE SCREENS
 ========================================================= */
 
-@media (max-width: 1100px) {
+@media (min-width: 1600px) {
+
+    :root {
+        --sidebar-width: 260px;
+    }
+
+    .hero {
+        height: 500px;
+    }
+
+    .dashboard {
+        padding-left: 27px;
+        padding-right: 27px;
+    }
+}
+
+
+/* =========================================================
+   MEDIUM / LAPTOP SCREENS
+========================================================= */
+
+@media (max-width: 1200px) {
 
     :root {
         --sidebar-width: 220px;
     }
 
+    .nav-item {
+        font-size: 12px;
+
+        min-height: 44px;
+    }
+
+    .hero {
+        height: 450px;
+    }
+
     .hero-center {
-        width: 72%;
+        width: 590px;
     }
 
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
+    .title-carnivore {
+        font-size: 49px;
     }
 
-    .features {
+    .title-chaos {
+        font-size: 56px;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .feature-grid {
         grid-template-columns: 1fr;
     }
 
-    .feature-content {
-        max-width: 70%;
+    .feature-card {
+        min-height: 145px;
     }
 
-    .bottom-panel {
+    .server-panel {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    .server-quote {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    :root {
+        --sidebar-width: 80px;
+    }
+
+    .sidebar {
+        padding:
+            18px
+            9px;
+    }
+
+    .logo-carnivore {
+        font-size: 10px;
+    }
+
+    .logo-chaos {
+        font-size: 16px;
+    }
+
+    .logo-evrima {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+    .nav-item {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .nav-item span:last-child {
+        display: none;
+    }
+
+    .nav-icon {
+        width: auto;
+
+        font-size: 20px;
+    }
+
+    .sidebar-slogan {
+        display: none;
+    }
+
+    .topbar {
+        padding:
+            0
+            16px;
+    }
+
+    .welcome {
+        display: none;
+    }
+
+    .top-divider {
+        display: none;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-tagline {
+        right: 20px;
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-writing {
+        display: none;
+    }
+
+    .hero-center {
+        width:
+            calc(100% - 40px);
+
+        max-width: none;
+    }
+
+    .title-carnivore {
+        font-size: 40px;
+    }
+
+    .title-chaos {
+        font-size: 47px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .stats-grid {
         grid-template-columns: 1fr;
     }
 
-    .server-box,
-    .discord-box {
-        border: 0;
+    .server-panel {
+        grid-template-columns: 1fr;
     }
 
-    .bottom-quote {
-        border-top: 1px solid #333;
-        border-bottom: 1px solid #333;
+    .server-status-block {
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,.08);
     }
 }
 
@@ -1186,146 +1545,112 @@ footer span {
    MOBILE
 ========================================================= */
 
-@media (max-width: 760px) {
+@media (max-width: 560px) {
 
     :root {
         --sidebar-width: 0px;
     }
 
     .sidebar {
-        position: relative;
-
-        width: 100%;
-        height: auto;
-
-        border-right: 0;
-        border-bottom: 1px solid #67191e;
-    }
-
-    .website {
-        display: block;
+        display: none;
     }
 
     .main-area {
         margin-left: 0;
-    }
 
-    .navigation {
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sidebar-quote {
-        display: none;
+        width: 100%;
     }
 
     .topbar {
-        height: auto;
-
-        min-height: 55px;
-
-        padding: 12px 15px;
+        height: 54px;
     }
 
     .topbar-right {
-        flex-wrap: wrap;
+        gap: 10px;
+    }
 
-        justify-content: center;
+    .social-icons {
+        gap: 10px;
     }
 
     .hero {
-        min-height: 460px;
+        height: 380px;
     }
 
     .hero-tagline {
-        left: 0;
-        right: 0;
-        top: 25px;
+        left: 50%;
+        right: auto;
 
-        text-align: center;
+        transform:
+            translateX(-50%);
 
-        font-size: 10px;
+        width: max-content;
 
-        letter-spacing: 4px;
+        font-size: 9px;
+
+        letter-spacing: 2px;
     }
 
     .hero-center {
-        width: 90%;
+        bottom: 22px;
 
-        bottom: 35px;
+        width:
+            calc(100% - 24px);
     }
 
-    .hero-carnivore {
-        font-size: 43px;
+    .title-carnivore {
+        font-size: 34px;
     }
 
-    .hero-chaos {
-        font-size: 52px;
+    .title-chaos {
+        font-size: 40px;
     }
 
-    .hero-evrima {
-        font-size: 14px;
+    .title-evrima {
+        font-size: 12px;
 
-        letter-spacing: 10px;
+        letter-spacing: 7px;
     }
 
     .hero-buttons {
         grid-template-columns: 1fr;
-
-        gap: 10px;
     }
 
-    .hero-left-writing,
-    .hero-right-writing {
-        display: none;
+    .hero-button {
+        height: 48px;
+
+        font-size: 13px;
     }
 
-    .content {
-        padding: 12px;
+    .dashboard {
+        padding:
+            12px;
     }
 
-    .stats {
-        grid-template-columns: 1fr;
+    .stat-card {
+        min-height: 75px;
     }
 
-    .features {
-        grid-template-columns: 1fr;
-    }
+    .feature-card {
+        padding:
+            20px;
 
-    .feature-content {
-        max-width: 75%;
-    }
-
-    .bottom-panel {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL SCREENS
-========================================================= */
-
-@media (max-width: 450px) {
-
-    .navigation {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-carnivore {
-        font-size: 34px;
-    }
-
-    .hero-chaos {
-        font-size: 42px;
-    }
-
-    .hero-evrima {
-        letter-spacing: 7px;
+        min-height: 170px;
     }
 
     .feature-content {
         max-width: 82%;
+    }
+
+    .feature-dino {
+        font-size: 55px;
+    }
+
+    .mutation-decoration {
+        font-size: 58px;
+    }
+
+    .discord-block {
+        padding: 20px;
     }
 }
