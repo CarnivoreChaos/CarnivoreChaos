@@ -691,10 +691,10 @@ button {
         rgba(235, 235, 235, .70);
 
     font-size: 26px;
+font-family: "Segoe Print", "Bradley Hand", cursive;
+    font-weight: 700;
 
-    font-weight: 900;
-
-    font-style: italic;
+   font-style: normal;
 
     line-height: .9;
 
