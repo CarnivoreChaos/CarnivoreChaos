@@ -449,7 +449,7 @@ button {
             rgba(0, 0, 0, .01)
         ),
         url("./hero-bg.png")
-        center 35% / cover
+        center 15% / cover
         no-repeat;
 
     border-bottom:
