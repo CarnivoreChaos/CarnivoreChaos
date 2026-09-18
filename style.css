@@ -448,7 +448,7 @@ button {
             rgba(0, 0, 0, .08),
             rgba(0, 0, 0, .01)
         ),
-        url("url("hero-bg.png")")
+        url("./hero-bg.png")
         center center / cover
         no-repeat;
 
