@@ -2,7 +2,12 @@
    CARNIVORE CHAOS — COMPLETE HOMEPAGE CSS
    Fresh replacement stylesheet
 ========================================================= */
-
+@font-face {
+    font-family: "Another Danger";
+    src: url("./Another%20Danger%20-%20Demo.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
 * {
     margin: 0;
     padding: 0;
@@ -691,8 +696,8 @@ button {
         rgba(235, 235, 235, .70);
 
     font-size: 26px;
-font-family: "Segoe Print", "Bradley Hand", cursive;
-    font-weight: 700;
+font-family: "Another Danger", cursive;
+    font-weight: normal;
 
    font-style: normal;
 
