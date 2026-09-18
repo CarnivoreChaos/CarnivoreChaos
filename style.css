@@ -550,7 +550,15 @@ button {
     text-shadow:
         0 5px 4px rgba(0, 0, 0, .95);
 }
-
+.hero-logo-image {
+    display: block;
+    width: 430px;
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 6px rgba(0, 0, 0, .9));
+}
 .title-carnivore {
     color: #e8e8e8;
 
