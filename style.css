@@ -700,11 +700,13 @@ font-family: "Another Danger", cursive;
     font-weight: normal;
 
    font-style: normal;
-
+letter-spacing: 2px;
     line-height: .9;
 
-    text-shadow:
-        0 3px 3px #000;
+   text-shadow:
+    0 3px 3px #000,
+    0 0 6px rgba(255, 255, 255, 0.55),
+    0 0 14px rgba(230, 38, 46, 0.45);
 
     pointer-events: none;
 }
