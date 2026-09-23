@@ -1281,7 +1281,7 @@ letter-spacing: 2px;
             rgba(0,0,0,.80),
             rgba(0,0,0,.25)
         ),
-        url("url("hero-bg.png")")
+        url("./hero-bg.png")
         center 55% / cover
         no-repeat;
 
