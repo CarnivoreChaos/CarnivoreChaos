@@ -1096,7 +1096,21 @@ letter-spacing: 2px;
 }
 
 .feature-dino {
-    position: absolute;
+.patreon-rex {
+    width: 115px;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.patreon-rex img {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+    display: block;
+}
+   position: absolute;
 
     right: 24px;
 
