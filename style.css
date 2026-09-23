@@ -1105,22 +1105,22 @@ letter-spacing: 2px;
 }
 
 .patreon-rex {
-    width: 175px;
-    height: 175px;
+    width: 165px;
+    height: 165px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    right: 14px;
+    right: 4px;
     bottom: -12px;
 
     opacity: 1;
 }
 
 .patreon-rex img {
-    width: 175px;
-    height: 175px;
+    width: 165px;
+    height: 165px;
 
     object-fit: contain;
     display: block;
