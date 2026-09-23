@@ -1111,6 +1111,7 @@ letter-spacing: 2px;
     align-items: center;
     justify-content: center;
     opacity: 1;
+   transform: translate(12px, 10px);
 }
 
 .patreon-rex img {
