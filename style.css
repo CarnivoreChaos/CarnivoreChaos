@@ -1105,20 +1105,30 @@ letter-spacing: 2px;
 }
 
 .patreon-rex {
-    width: 155px;
-    height: 155px;
+    width: 175px;
+    height: 175px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    right: 14px;
+    bottom: 2px;
+
     opacity: 1;
-   transform: translate(12px, 10px);
 }
 
 .patreon-rex img {
-    width: 155px;
-    height: 155px;
+    width: 175px;
+    height: 175px;
+
     object-fit: contain;
     display: block;
+
+    filter:
+        drop-shadow(0 0 6px rgba(255, 40, 20, 0.70))
+        drop-shadow(0 0 14px rgba(255, 170, 0, 0.55))
+        drop-shadow(0 0 24px rgba(255, 80, 0, 0.35));
 }
 
    .mutation-dna {
