@@ -364,6 +364,14 @@ button {
     display: block;
    transform: translateX(-70px);
 }
+.dd-player-balance {
+    position: absolute;
+    left: 95px;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    z-index: 2;
+}
 .topbar-right {
     margin-left: auto;
 
