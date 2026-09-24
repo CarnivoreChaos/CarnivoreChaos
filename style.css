@@ -1516,16 +1516,6 @@ footer {
     .feature-card {
         min-height: 145px;
     }
-
-    .server-panel {
-        grid-template-columns:
-            1fr
-            1fr;
-    }
-
-    .server-quote {
-        display: none;
-    }
 }
 
 
