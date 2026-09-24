@@ -1281,7 +1281,7 @@ letter-spacing: 2px;
             rgba(0,0,0,.25)
         ),
         url("./hunter-prey-banner.png")
-        center 25% / cover
+        center 5% / cover
         no-repeat;
 
     overflow: hidden;
