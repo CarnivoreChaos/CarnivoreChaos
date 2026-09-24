@@ -350,7 +350,19 @@ button {
 
     z-index: 20;
 }
+.topbar-spacer {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 
+.dd-player-amount-icon {
+    width: 190px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+}
 .topbar-right {
     margin-left: auto;
 
