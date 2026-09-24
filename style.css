@@ -300,7 +300,7 @@ button {
 
     line-height: .9;
 
-    transform: rotate(-5deg);
+   transform: translateY(-15px) rotate(-5deg);
 
     text-shadow:
         0 2px 2px #000;
