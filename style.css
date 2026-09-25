@@ -1178,7 +1178,28 @@ letter-spacing: 2px;
         drop-shadow(0 0 6px rgba(255, 0, 35, 0.65))
         drop-shadow(0 0 12px rgba(160, 40, 255, 0.40));
 }
+.dino-market-image {
+    position: absolute;
+    right: 8px;
+    bottom: -5px;
+    width: 165px;
+    height: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+}
 
+.dino-market-image img {
+    width: 165px;
+    height: 165px;
+    object-fit: contain;
+    display: block;
+    filter:
+        drop-shadow(0 0 6px rgba(255, 0, 20, 0.65))
+        drop-shadow(0 0 14px rgba(255, 0, 20, 0.35));
+}
 
 /* =========================================================
    BOTTOM SERVER PANEL
