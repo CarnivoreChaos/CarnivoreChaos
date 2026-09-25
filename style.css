@@ -1180,8 +1180,8 @@ letter-spacing: 2px;
 }
 .dino-market-image {
     position: absolute;
-    right: 8px;
-    bottom: -5px;
+    right: -15px;
+    bottom: -20px;
     width: 200px;
     height: 200px;
     display: flex;
