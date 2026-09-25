@@ -2054,7 +2054,14 @@ footer {
         ),
         #080808;
 }
-
+.market-page .dino-card-image img {
+    width: auto;
+    height: auto;
+    max-width: 78%;
+    max-height: 78%;
+    object-fit: contain;
+    display: block;
+}
 .market-page .dino-card-image::after {
     content: "DINOSAUR IMAGE";
 
