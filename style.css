@@ -2062,15 +2062,6 @@ footer {
     object-fit: contain;
     display: block;
 }
-.market-page .dino-card-image::after {
-    content: "DINOSAUR IMAGE";
-
-    color: #383838;
-
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
 
 
 /* CARD INFORMATION */
