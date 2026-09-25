@@ -1182,8 +1182,8 @@ letter-spacing: 2px;
     position: absolute;
     right: 8px;
     bottom: -5px;
-    width: 165px;
-    height: 165px;
+    width: 200px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1192,8 +1192,8 @@ letter-spacing: 2px;
 }
 
 .dino-market-image img {
-    width: 165px;
-    height: 165px;
+    width: 200px;
+    height: 200px;
     object-fit: contain;
     display: block;
     filter:
