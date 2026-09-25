@@ -1,1 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dino Market | Carnivore Chaos</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="market-page">
+
+    <div class="site-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-carnivore">CARNIVORE</div>
+                <div class="logo-chaos">CHAOS</div>
+                <div class="logo-evrima">EVRIMA</div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="./index.html">HOME</a>
+                <a href="./profile.html">MY PROFILE</a>
+                <a href="./dinosaurs.html">MY DINOSAURS</a>
+
+                <a href="./market.html" class="active">
+                    DINO MARKET
+                </a>
+
+                <a href="./dino-dollars.html">DINO DOLLARS</a>
+                <a href="./mutations.html">MUTATIONS</a>
+                <a href="./prime.html">PRIME</a>
+                <a href="./friends.html">FRIENDS</a>
+                <a href="./teleport.html">TELEPORT</a>
+                <a href="./achievements.html">ACHIEVEMENTS</a>
+                <a href="./leaderboards.html">LEADERBOARDS</a>
+                <a href="./rules.html">SERVER RULES</a>
+
+                <a href="#" class="discord-link">
+                    DISCORD
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN AREA -->
+        <main class="main-area">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <div class="topbar-spacer">
+
+                    <img src="./dd-player-amount-icon.png"
+                         alt="Dino Dollars"
+                         class="dd-player-amount-icon">
+
+                    <span class="dd-player-balance">
+                        12,450
+                    </span>
+
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="server-online">
+                        <span class="online-dot"></span>
+                        SERVER ONLINE
+                    </div>
+
+                    <div class="welcome-player">
+                        WELCOME SURVIVOR
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ========================= -->
+            <!--       DINO MARKET         -->
+            <!-- ========================= -->
+
+            <section class="market-container">
+
+                <!-- MARKET HEADER -->
+                <div class="market-header">
+
+                    <div>
+                        <h1>DINO MARKET</h1>
+
+                        <p>
+                            Purchase dinosaurs at 75% growth using Dino Dollars.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- MARKET CONTROLS -->
+                <div class="market-controls">
+
+                    <div class="market-filters">
+
+                        <button class="market-filter active"
+                                data-filter="all">
+                            ALL
+                        </button>
+
+                        <button class="market-filter"
+                                data-filter="carnivore">
+                            CARNIVORES
+                        </button>
+
+                        <button class="market-filter"
+                                data-filter="herbivore">
+                            HERBIVORES
+                        </button>
+
+                        <button class="market-filter"
+                                data-filter="omnivore">
+                            OMNIVORES
+                        </button>
+
+                    </div>
+
+
+                    <div class="market-search">
+
+                        <input
+                            type="text"
+                            id="dino-search"
+                            placeholder="Search dinosaurs..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!--      DINOSAUR GRID        -->
+                <!-- ========================= -->
+
+                <div class="dino-market-grid">
+
+
+                    <!-- DINOSAUR SLOT -->
+                    <article class="dino-market-card"
+                             data-category="carnivore">
+
+                        <div class="dino-card-image">
+
+                            <!-- Dinosaur image goes here later -->
+
+                        </div>
+
+                        <div class="dino-card-info">
+
+                            <span class="dino-category">
+                                CARNIVORE
+                            </span>
+
+                            <h2>
+                                DINOSAUR NAME
+                            </h2>
+
+                            <div class="dino-growth">
+                                75% GROWTH
+                            </div>
+
+                            <div class="dino-card-bottom">
+
+                                <div class="dino-price">
+                                    <span class="price-number">
+                                        5,000
+                                    </span>
+
+                                    <span class="price-currency">
+                                        DD
+                                    </span>
+                                </div>
+
+                                <button class="dino-buy-button">
+                                    PURCHASE
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- DINOSAUR SLOT -->
+                    <article class="dino-market-card"
+                             data-category="herbivore">
+
+                        <div class="dino-card-image">
+
+                            <!-- Dinosaur image goes here later -->
+
+                        </div>
+
+                        <div class="dino-card-info">
+
+                            <span class="dino-category">
+                                HERBIVORE
+                            </span>
+
+                            <h2>
+                                DINOSAUR NAME
+                            </h2>
+
+                            <div class="dino-growth">
+                                75% GROWTH
+                            </div>
+
+                            <div class="dino-card-bottom">
+
+                                <div class="dino-price">
+                                    <span class="price-number">
+                                        5,000
+                                    </span>
+
+                                    <span class="price-currency">
+                                        DD
+                                    </span>
+                                </div>
+
+                                <button class="dino-buy-button">
+                                    PURCHASE
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- DINOSAUR SLOT -->
+                    <article class="dino-market-card"
+                             data-category="omnivore">
+
+                        <div class="dino-card-image">
+
+                            <!-- Dinosaur image goes here later -->
+
+                        </div>
+
+                        <div class="dino-card-info">
+
+                            <span class="dino-category">
+                                OMNIVORE
+                            </span>
+
+                            <h2>
+                                DINOSAUR NAME
+                            </h2>
+
+                            <div class="dino-growth">
+                                75% GROWTH
+                            </div>
+
+                            <div class="dino-card-bottom">
+
+                                <div class="dino-price">
+                                    <span class="price-number">
+                                        5,000
+                                    </span>
+
+                                    <span class="price-currency">
+                                        DD
+                                    </span>
+                                </div>
+
+                                <button class="dino-buy-button">
+                                    PURCHASE
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ADD MORE DINOSAUR CARDS HERE -->
+
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script>
+
+        /* MARKET FILTERS */
+
+        const filterButtons =
+            document.querySelectorAll(".market-filter");
+
+        const dinosaurCards =
+            document.querySelectorAll(".dino-market-card");
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const filter =
+                    button.dataset.filter;
+
+                filterButtons.forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+                button.classList.add("active");
+
+                dinosaurCards.forEach(card => {
+
+                    if (
+                        filter === "all" ||
+                        card.dataset.category === filter
+                    ) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        /* DINOSAUR SEARCH */
+
+        const searchBox =
+            document.getElementById("dino-search");
+
+        searchBox.addEventListener("input", () => {
+
+            const search =
+                searchBox.value.toLowerCase();
+
+            dinosaurCards.forEach(card => {
+
+                const name =
+                    card.querySelector("h2")
+                        .textContent
+                        .toLowerCase();
+
+                card.style.display =
+                    name.includes(search)
+                    ? ""
+                    : "none";
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
