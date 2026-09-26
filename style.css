@@ -2557,3 +2557,75 @@ footer {
     border-color: #a40000;
     box-shadow: 0 0 18px rgba(130, 0, 0, 0.22);
 }
+/* ==============================
+   PLAYER MARKET MUTATIONS
+   ============================== */
+
+.market-page .mutation-info {
+    position: relative;
+    cursor: pointer;
+}
+
+.market-page .mutation-count {
+    color: #d4a339 !important;
+}
+
+.market-page .mutation-tooltip {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+
+    width: 220px;
+    padding: 13px 14px;
+
+    background: rgba(7, 7, 7, 0.98);
+    border: 1px solid #750000;
+    border-left: 3px solid #a00000;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.65);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.18s ease;
+
+    z-index: 50;
+}
+
+.market-page .mutation-info:hover .mutation-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.market-page .mutation-tooltip-title {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #a00000 !important;
+    font-size: 8px !important;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.market-page .mutation-tooltip ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.market-page .mutation-tooltip li {
+    padding: 5px 0;
+    color: #ddd;
+    font-size: 10px;
+    font-weight: 700;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+}
+
+.market-page .mutation-tooltip li:last-child {
+    border-bottom: none;
+}
