@@ -2576,8 +2576,8 @@ footer {
     bottom: calc(100% + 10px);
     transform: translateX(-50%);
 
-    width: 170px;
-    padding: 9px 10px;
+    width: 140px;
+    padding: 5px 6px;
 
     background: rgba(7, 7, 7, 0.98);
     border: 1px solid #750000;
