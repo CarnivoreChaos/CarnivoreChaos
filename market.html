@@ -1162,7 +1162,34 @@ closeDinoDetails.addEventListener("click", () => {
 
 dinoDetailsOverlay.addEventListener("click", () => {
     dinoDetailsModal.classList.remove("active");
-});   
+}); 
+  /* ==============================
+   SELL YOUR DINO MODAL
+   ============================== */
+
+const sellDinoButton =
+    document.querySelector(".sell-dino-button");
+
+const sellDinoModal =
+    document.querySelector("#sellDinoModal");
+
+const closeSellDino =
+    document.querySelector("#closeSellDino");
+
+const sellDinoOverlay =
+    document.querySelector(".sell-dino-overlay");
+
+sellDinoButton.addEventListener("click", () => {
+    sellDinoModal.classList.add("active");
+});
+
+closeSellDino.addEventListener("click", () => {
+    sellDinoModal.classList.remove("active");
+});
+
+sellDinoOverlay.addEventListener("click", () => {
+    sellDinoModal.classList.remove("active");
+});      
     </script>
 
 </body>
