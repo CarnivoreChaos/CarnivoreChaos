@@ -2515,3 +2515,45 @@ footer {
     letter-spacing: 1px;
     cursor: pointer;
 }
+/* ==============================
+   MARKET TYPE TABS
+   ============================== */
+
+.market-page .market-mode-tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 22px 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.market-page .market-mode-tab {
+    min-width: 170px;
+    padding: 13px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0b0b0b;
+    color: #777;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.market-page .market-mode-tab:hover {
+    color: #fff;
+    border-color: rgba(150, 0, 0, 0.7);
+    background: #120909;
+}
+
+.market-page .market-mode-tab.active {
+    color: #fff;
+    background: linear-gradient(
+        180deg,
+        #8d0000 0%,
+        #560000 100%
+    );
+    border-color: #a40000;
+    box-shadow: 0 0 18px rgba(130, 0, 0, 0.22);
+}
