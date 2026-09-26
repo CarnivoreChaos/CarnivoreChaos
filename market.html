@@ -860,7 +860,48 @@
             });
 
         });
+/* ==============================
+   DINO MARKET / PLAYER MARKET
+   ============================== */
 
+const marketModeTabs =
+    document.querySelectorAll(".market-mode-tab");
+
+const dinoMarketControls =
+    document.querySelector(".market-controls");
+
+const dinoMarketGrid =
+    document.querySelector(".dino-market-grid");
+
+const playerMarket =
+    document.querySelector("#playerMarket");
+
+marketModeTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+
+        marketModeTabs.forEach((button) => {
+            button.classList.remove("active");
+        });
+
+        tab.classList.add("active");
+
+        const mode = tab.dataset.marketMode;
+
+        if (mode === "player") {
+
+            dinoMarketControls.style.display = "none";
+            dinoMarketGrid.style.display = "none";
+            playerMarket.style.display = "block";
+
+        } else {
+
+            dinoMarketControls.style.display = "";
+            dinoMarketGrid.style.display = "";
+            playerMarket.style.display = "none";
+
+        }
+    });
+});
     </script>
 
 </body>
