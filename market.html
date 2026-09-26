@@ -1023,6 +1023,35 @@ marketModeTabs.forEach((tab) => {
         }
     });
 });
+     /* ==============================
+   VIEW DINO MODAL
+   ============================== */
+
+const viewDinoButtons =
+    document.querySelectorAll(".player-buy-button");
+
+const dinoDetailsModal =
+    document.querySelector("#dinoDetailsModal");
+
+const closeDinoDetails =
+    document.querySelector("#closeDinoDetails");
+
+const dinoDetailsOverlay =
+    document.querySelector(".dino-details-overlay");
+
+viewDinoButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        dinoDetailsModal.classList.add("active");
+    });
+});
+
+closeDinoDetails.addEventListener("click", () => {
+    dinoDetailsModal.classList.remove("active");
+});
+
+dinoDetailsOverlay.addEventListener("click", () => {
+    dinoDetailsModal.classList.remove("active");
+});   
     </script>
 
 </body>
