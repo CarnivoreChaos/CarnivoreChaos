@@ -908,6 +908,117 @@
     </div>
 
 </div>   
+<!-- SELL YOUR DINO MODAL -->
+<div class="sell-dino-modal" id="sellDinoModal">
+
+    <div class="sell-dino-overlay"></div>
+
+    <div class="sell-dino-window">
+
+        <button
+            class="sell-dino-close"
+            id="closeSellDino"
+            type="button"
+        >
+            ×
+        </button>
+
+        <div class="sell-dino-header">
+            <span>PLAYER MARKET</span>
+            <h2>SELL YOUR DINO</h2>
+            <p>
+                Choose one of your owned dinosaurs and set your asking price.
+            </p>
+        </div>
+
+        <div class="sell-dino-body">
+
+            <div class="sell-dino-select">
+                <label for="ownedDinoSelect">
+                    SELECT DINOSAUR
+                </label>
+
+                <select id="ownedDinoSelect">
+                    <option>TYRANNOSAURUS</option>
+                </select>
+            </div>
+
+            <div class="sell-dino-preview">
+
+                <div class="sell-dino-image">
+                    <img
+                        src="./tyrannosaurus.png"
+                        alt="Tyrannosaurus"
+                    >
+                </div>
+
+                <div class="sell-dino-details">
+
+                    <div>
+                        <span>SPECIES</span>
+                        <strong>TYRANNOSAURUS</strong>
+                    </div>
+
+                    <div>
+                        <span>GROWTH</span>
+                        <strong>100%</strong>
+                    </div>
+
+                    <div>
+                        <span>GENDER</span>
+                        <strong>FEMALE</strong>
+                    </div>
+
+                    <div>
+                        <span>PRIME</span>
+                        <strong>YES</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="sell-dino-mutations">
+                <span>ACTIVE MUTATIONS</span>
+
+                <ul>
+                    <li>Hemomania</li>
+                    <li>Accelerated Prey Drive</li>
+                    <li>Hypermetabolic Inanition</li>
+                </ul>
+            </div>
+
+            <div class="sell-dino-price-field">
+
+                <label for="sellDinoPrice">
+                    SELLING PRICE
+                </label>
+
+                <div class="sell-dino-price-input">
+                    <input
+                        id="sellDinoPrice"
+                        type="number"
+                        min="1"
+                        placeholder="Enter DD amount"
+                    >
+
+                    <span>DD</span>
+                </div>
+
+            </div>
+
+            <button
+                class="list-dino-button"
+                type="button"
+            >
+                LIST DINO FOR SALE
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
             </section>
 
         </main>
