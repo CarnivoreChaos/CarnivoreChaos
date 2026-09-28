@@ -3236,3 +3236,248 @@ footer {
         padding-right: 18px;
     }
 }
+/* ==============================
+   MY LISTINGS
+   ============================== */
+
+.market-page .my-listings-section {
+    display: none;
+}
+
+.market-page .my-listings-section.active {
+    display: block;
+}
+
+.market-page .my-listings-header {
+    margin-bottom: 18px;
+    padding: 18px 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(105, 0, 0, 0.18),
+            rgba(8, 8, 8, 0.96) 45%
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-left: 3px solid #8f0000;
+}
+
+.market-page .my-listings-header span {
+    display: block;
+    margin-bottom: 4px;
+
+    color: #8f0000;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.market-page .my-listings-header h3 {
+    margin: 0 0 4px;
+
+    color: #fff;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.market-page .my-listings-header p {
+    margin: 0;
+
+    color: #6f6f6f;
+    font-size: 10px;
+}
+
+.market-page .my-listings-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fill, minmax(255px, 1fr));
+
+    gap: 18px;
+}
+
+.market-page .my-listing-card {
+    overflow: hidden;
+
+    background: #080808;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.market-page .my-listing-image {
+    position: relative;
+
+    height: 185px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(120, 0, 0, 0.20),
+            transparent 62%
+        ),
+        #060606;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.market-page .my-listing-image img {
+    width: auto;
+    height: auto;
+
+    max-width: 78%;
+    max-height: 78%;
+
+    object-fit: contain;
+}
+
+.market-page .listing-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    padding: 5px 7px;
+
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.market-page .listing-status.active {
+    color: #8cff8c;
+    background: rgba(0, 80, 0, 0.35);
+    border: 1px solid rgba(60, 180, 60, 0.35);
+}
+
+.market-page .my-listing-info {
+    padding: 15px;
+}
+
+.market-page .my-listing-category {
+    color: #850000;
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.market-page .my-listing-info h3 {
+    margin: 5px 0 13px;
+
+    color: #fff;
+
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.market-page .my-listing-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+}
+
+.market-page .my-listing-details > div {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 7px 8px;
+
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.market-page .my-listing-details span {
+    color: #555;
+
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.market-page .my-listing-details strong {
+    color: #ddd;
+    font-size: 9px;
+}
+
+.market-page .my-listing-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 9px;
+    padding: 9px;
+
+    background: #0d0d0d;
+}
+
+.market-page .my-listing-price span {
+    color: #555;
+
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.market-page .my-listing-price strong {
+    color: #d4a339;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.market-page .my-listing-price small {
+    color: #8c6b27;
+    font-size: 8px;
+}
+
+.market-page .my-listing-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+    margin-top: 12px;
+}
+
+.market-page .my-listing-view {
+    grid-column: 1 / -1;
+
+    padding: 9px 10px;
+
+    border: 1px solid #750000;
+    background: #190707;
+
+    color: #fff;
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.market-page .my-listing-edit,
+.market-page .my-listing-remove {
+    padding: 9px 8px;
+
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+}
+
+.market-page .my-listing-edit {
+    border: 1px solid #8c6b27;
+    background: rgba(120, 90, 25, 0.12);
+    color: #d4a339;
+}
+
+.market-page .my-listing-remove {
+    border: 1px solid #650000;
+    background: #100606;
+    color: #b55;
+}
