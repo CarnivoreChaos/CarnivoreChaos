@@ -1310,7 +1310,40 @@ closeSellDino.addEventListener("click", () => {
 
 sellDinoOverlay.addEventListener("click", () => {
     sellDinoModal.classList.remove("active");
-});      
+}); 
+        /* ==============================
+   BUY DINOS / MY LISTINGS
+   ============================== */
+
+const buyDinosTab =
+    document.querySelector("#buyDinosTab");
+
+const myListingsTab =
+    document.querySelector("#myListingsTab");
+
+const buyDinosSection =
+    document.querySelector("#buyDinosSection");
+
+const myListingsSection =
+    document.querySelector("#myListingsSection");
+
+buyDinosTab.addEventListener("click", () => {
+
+    buyDinosTab.classList.add("active");
+    myListingsTab.classList.remove("active");
+
+    buyDinosSection.style.display = "grid";
+    myListingsSection.classList.remove("active");
+});
+
+myListingsTab.addEventListener("click", () => {
+
+    myListingsTab.classList.add("active");
+    buyDinosTab.classList.remove("active");
+
+    buyDinosSection.style.display = "none";
+    myListingsSection.classList.add("active");
+});
     </script>
 
 </body>
