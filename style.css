@@ -3729,3 +3729,205 @@ footer {
             #700000
         );
 }
+/* ==============================
+   REMOVE LISTING MODAL
+   ============================== */
+
+.market-page .remove-listing-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 650;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+}
+
+.market-page .remove-listing-modal.active {
+    display: flex;
+}
+
+.market-page .remove-listing-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.84);
+    backdrop-filter: blur(3px);
+}
+
+.market-page .remove-listing-window {
+    position: relative;
+    z-index: 2;
+
+    width: min(440px, 94vw);
+
+    background: #080808;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 2px solid #8f0000;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75);
+}
+
+.market-page .remove-listing-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #100606;
+    color: #fff;
+
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.market-page .remove-listing-close:hover {
+    background: #750000;
+}
+
+.market-page .remove-listing-header {
+    padding: 25px 26px 16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(105, 0, 0, 0.22),
+            rgba(8, 8, 8, 0.96) 45%
+        );
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.market-page .remove-listing-header span {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #8f0000;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.market-page .remove-listing-header h2 {
+    margin: 0;
+
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.market-page .remove-listing-body {
+    padding: 22px 26px 26px;
+}
+
+.market-page .remove-listing-dino {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 16px;
+    padding: 12px;
+
+    background: #0b0b0b;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.market-page .remove-listing-dino img {
+    width: 85px;
+    height: 60px;
+
+    object-fit: contain;
+}
+
+.market-page .remove-listing-dino span {
+    display: block;
+
+    color: #850000;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.market-page .remove-listing-dino h3 {
+    margin: 3px 0 0;
+
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.market-page .remove-listing-warning {
+    margin: 0 0 8px;
+
+    color: #ddd;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.market-page .remove-listing-note {
+    margin: 0 0 20px;
+
+    color: #666;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.market-page .remove-listing-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+}
+
+.market-page .cancel-remove-listing,
+.market-page .confirm-remove-listing {
+    padding: 11px 12px;
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.market-page .cancel-remove-listing {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0c0c0c;
+    color: #aaa;
+}
+
+.market-page .cancel-remove-listing:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.market-page .confirm-remove-listing {
+    border: 1px solid #8f0000;
+
+    background:
+        linear-gradient(
+            180deg,
+            #750000,
+            #470000
+        );
+
+    color: #fff;
+}
+
+.market-page .confirm-remove-listing:hover {
+    background:
+        linear-gradient(
+            180deg,
+            #950000,
+            #600000
+        );
+}
