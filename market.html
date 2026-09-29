@@ -1556,6 +1556,42 @@ updatePriceButton.addEventListener("click", () => {
 
     editPriceModal.classList.remove("active");
 });
+        /* ==============================
+   REMOVE LISTING MODAL
+   ============================== */
+
+const removeListingButtons =
+    document.querySelectorAll(".my-listing-remove");
+
+const removeListingModal =
+    document.querySelector("#removeListingModal");
+
+const closeRemoveListing =
+    document.querySelector("#closeRemoveListing");
+
+const removeListingOverlay =
+    document.querySelector(".remove-listing-overlay");
+
+const cancelRemoveListing =
+    document.querySelector(".cancel-remove-listing");
+
+removeListingButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        removeListingModal.classList.add("active");
+    });
+});
+
+closeRemoveListing.addEventListener("click", () => {
+    removeListingModal.classList.remove("active");
+});
+
+removeListingOverlay.addEventListener("click", () => {
+    removeListingModal.classList.remove("active");
+});
+
+cancelRemoveListing.addEventListener("click", () => {
+    removeListingModal.classList.remove("active");
+});
     </script>
 
 </body>
