@@ -1592,6 +1592,24 @@ removeListingOverlay.addEventListener("click", () => {
 cancelRemoveListing.addEventListener("click", () => {
     removeListingModal.classList.remove("active");
 });
+     /* ==============================
+   CONFIRM REMOVE LISTING
+   ============================== */
+
+const confirmRemoveListing =
+    document.querySelector(".confirm-remove-listing");
+
+confirmRemoveListing.addEventListener("click", () => {
+
+    const listingCard =
+        document.querySelector(".my-listing-card");
+
+    if (listingCard) {
+        listingCard.remove();
+    }
+
+    removeListingModal.classList.remove("active");
+});   
     </script>
 
 </body>
