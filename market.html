@@ -1422,7 +1422,41 @@ myListingsTab.addEventListener("click", () => {
     buyDinosSection.style.display = "none";
     myListingsSection.classList.add("active");
 });
-    
+    /* ==============================
+   EDIT PRICE MODAL
+   ============================== */
+
+const editPriceButtons =
+    document.querySelectorAll(".my-listing-edit");
+
+const editPriceModal =
+    document.querySelector("#editPriceModal");
+
+const closeEditPrice =
+    document.querySelector("#closeEditPrice");
+
+const editPriceOverlay =
+    document.querySelector(".edit-price-overlay");
+
+const newListingPrice =
+    document.querySelector("#newListingPrice");
+
+editPriceButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+
+        newListingPrice.value = "18500";
+
+        editPriceModal.classList.add("active");
+    });
+});
+
+closeEditPrice.addEventListener("click", () => {
+    editPriceModal.classList.remove("active");
+});
+
+editPriceOverlay.addEventListener("click", () => {
+    editPriceModal.classList.remove("active");
+});
     </script>
 
 </body>
