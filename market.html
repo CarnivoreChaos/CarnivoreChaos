@@ -1457,6 +1457,38 @@ closeEditPrice.addEventListener("click", () => {
 editPriceOverlay.addEventListener("click", () => {
     editPriceModal.classList.remove("active");
 });
+        /* ==============================
+   UPDATE LISTING PRICE
+   ============================== */
+
+const updatePriceButton =
+    document.querySelector(".update-price-button");
+
+const listingPriceDisplay =
+    document.querySelector(".my-listing-price strong");
+
+const currentPriceDisplay =
+    document.querySelector(".current-listing-price strong");
+
+updatePriceButton.addEventListener("click", () => {
+
+    const newPrice = Number(newListingPrice.value);
+
+    if (!newPrice || newPrice < 1) {
+        return;
+    }
+
+    const formattedPrice =
+        newPrice.toLocaleString();
+
+    listingPriceDisplay.innerHTML =
+        `${formattedPrice} <small>DD</small>`;
+
+    currentPriceDisplay.innerHTML =
+        `${formattedPrice} <small>DD</small>`;
+
+    editPriceModal.classList.remove("active");
+});
     </script>
 
 </body>
