@@ -1140,6 +1140,83 @@
     </div>
 
 </div>
+                <!-- EDIT PRICE MODAL -->
+<div class="edit-price-modal" id="editPriceModal">
+
+    <div class="edit-price-overlay"></div>
+
+    <div class="edit-price-window">
+
+        <button
+            class="edit-price-close"
+            id="closeEditPrice"
+            type="button"
+        >
+            ×
+        </button>
+
+        <div class="edit-price-header">
+            <span>MY LISTINGS</span>
+            <h2>EDIT PRICE</h2>
+            <p>
+                Update the asking price for your listed dinosaur.
+            </p>
+        </div>
+
+        <div class="edit-price-body">
+
+            <div class="edit-price-dino">
+                <img
+                    src="./tyrannosaurus.png"
+                    alt="Tyrannosaurus"
+                >
+
+                <div>
+                    <span>CARNIVORE</span>
+                    <h3>TYRANNOSAURUS</h3>
+                </div>
+            </div>
+
+            <div class="current-listing-price">
+                <span>CURRENT PRICE</span>
+
+                <strong>
+                    18,500
+                    <small>DD</small>
+                </strong>
+            </div>
+
+            <div class="new-price-field">
+
+                <label for="newListingPrice">
+                    NEW PRICE
+                </label>
+
+                <div class="new-price-input">
+                    <input
+                        id="newListingPrice"
+                        type="number"
+                        min="1"
+                        placeholder="Enter new DD amount"
+                    >
+
+                    <span>DD</span>
+                </div>
+
+            </div>
+
+            <button
+                class="update-price-button"
+                type="button"
+            >
+                UPDATE PRICE
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
             </section>
 
         </main>
@@ -1311,6 +1388,7 @@ closeSellDino.addEventListener("click", () => {
 sellDinoOverlay.addEventListener("click", () => {
     sellDinoModal.classList.remove("active");
 }); 
+      
         /* ==============================
    BUY DINOS / MY LISTINGS
    ============================== */
@@ -1344,6 +1422,7 @@ myListingsTab.addEventListener("click", () => {
     buyDinosSection.style.display = "none";
     myListingsSection.classList.add("active");
 });
+    
     </script>
 
 </body>
