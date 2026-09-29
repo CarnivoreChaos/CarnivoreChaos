@@ -1854,6 +1854,92 @@ confirmPlayerPurchase.addEventListener("click", () => {
 
     purchaseConfirmModal.classList.remove("active");
 });
+        /* ==============================
+   PLAYER MARKET FILTERS + SEARCH
+   ============================== */
+
+const playerFilterButtons =
+    document.querySelectorAll(".player-filter");
+
+const playerMarketSearch =
+    document.querySelector(".player-market-search input");
+
+let activePlayerFilter = "ALL";
+
+
+function filterPlayerListings() {
+
+    const playerListingCards =
+        document.querySelectorAll(".player-dino-card");
+
+    const searchTerm =
+        playerMarketSearch.value
+            .trim()
+            .toUpperCase();
+
+
+    playerListingCards.forEach((card) => {
+
+        const category =
+            card.querySelector(".player-dino-category")
+                .textContent
+                .trim()
+                .toUpperCase();
+
+        const species =
+            card.querySelector("h3")
+                .textContent
+                .trim()
+                .toUpperCase();
+
+
+        const normalizedFilter =
+            activePlayerFilter.replace(/S$/, "");
+
+
+        const categoryMatches =
+            activePlayerFilter === "ALL" ||
+            category === normalizedFilter;
+
+
+        const searchMatches =
+            species.includes(searchTerm);
+
+
+        if (categoryMatches && searchMatches) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+}
+
+
+playerFilterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        playerFilterButtons.forEach((filterButton) => {
+            filterButton.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        activePlayerFilter =
+            button.textContent
+                .trim()
+                .toUpperCase();
+
+        filterPlayerListings();
+    });
+
+});
+
+
+playerMarketSearch.addEventListener("input", () => {
+    filterPlayerListings();
+});
     </script>
 
 </body>
