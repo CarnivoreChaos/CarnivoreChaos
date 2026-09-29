@@ -1811,6 +1811,49 @@ purchaseConfirmOverlay.addEventListener("click", () => {
 cancelPlayerPurchase.addEventListener("click", () => {
     purchaseConfirmModal.classList.remove("active");
 });
+        /* ==============================
+   COMPLETE PLAYER PURCHASE
+   ============================== */
+
+confirmPlayerPurchase.addEventListener("click", () => {
+
+    if (confirmPlayerPurchase.disabled) {
+        return;
+    }
+
+    const currentBalance =
+        Number(
+            playerWalletBalance.textContent
+                .replace(/,/g, "")
+                .trim()
+        );
+
+    const purchasePrice =
+        Number(
+            playerListingPrice.textContent
+                .replace(/,/g, "")
+                .trim()
+        );
+
+    if (currentBalance < purchasePrice) {
+        return;
+    }
+
+    const newBalance =
+        currentBalance - purchasePrice;
+
+    playerWalletBalance.textContent =
+        newBalance.toLocaleString();
+
+    const purchasedListing =
+        document.querySelector(".player-dino-card");
+
+    if (purchasedListing) {
+        purchasedListing.remove();
+    }
+
+    purchaseConfirmModal.classList.remove("active");
+});
     </script>
 
 </body>
