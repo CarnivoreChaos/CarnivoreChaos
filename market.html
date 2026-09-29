@@ -1717,6 +1717,100 @@ confirmRemoveListing.addEventListener("click", () => {
 
     removeListingModal.classList.remove("active");
 });   
+        /* ==============================
+   PLAYER PURCHASE CONFIRMATION
+   ============================== */
+
+const purchasePlayerDinoButton =
+    document.querySelector(".purchase-player-dino");
+
+const purchaseConfirmModal =
+    document.querySelector("#purchaseConfirmModal");
+
+const closePurchaseConfirm =
+    document.querySelector("#closePurchaseConfirm");
+
+const purchaseConfirmOverlay =
+    document.querySelector(".purchase-confirm-overlay");
+
+const cancelPlayerPurchase =
+    document.querySelector(".cancel-player-purchase");
+
+const confirmPlayerPurchase =
+    document.querySelector(".confirm-player-purchase");
+
+const purchaseCurrentBalance =
+    document.querySelector("#purchaseCurrentBalance");
+
+const purchaseRemainingBalance =
+    document.querySelector("#purchaseRemainingBalance");
+
+const playerWalletBalance =
+    document.querySelector(".dd-player-balance");
+
+const playerListingPrice =
+    document.querySelector(".details-price-number");
+
+
+purchasePlayerDinoButton.addEventListener("click", () => {
+
+    const currentBalance =
+        Number(
+            playerWalletBalance.textContent
+                .replace(/,/g, "")
+                .trim()
+        );
+
+    const purchasePrice =
+        Number(
+            playerListingPrice.textContent
+                .replace(/,/g, "")
+                .trim()
+        );
+
+    const remainingBalance =
+        currentBalance - purchasePrice;
+
+
+    purchaseCurrentBalance.textContent =
+        `${currentBalance.toLocaleString()} DD`;
+
+    purchaseRemainingBalance.textContent =
+        `${remainingBalance.toLocaleString()} DD`;
+
+
+    if (remainingBalance < 0) {
+
+        confirmPlayerPurchase.disabled = true;
+        confirmPlayerPurchase.textContent = "NOT ENOUGH DD";
+
+    } else {
+
+        confirmPlayerPurchase.disabled = false;
+        confirmPlayerPurchase.textContent = "PURCHASE DINO";
+
+    }
+
+
+    dinoDetailsModal.classList.remove("active");
+
+    purchaseConfirmModal.classList.add("active");
+});
+
+
+closePurchaseConfirm.addEventListener("click", () => {
+    purchaseConfirmModal.classList.remove("active");
+});
+
+
+purchaseConfirmOverlay.addEventListener("click", () => {
+    purchaseConfirmModal.classList.remove("active");
+});
+
+
+cancelPlayerPurchase.addEventListener("click", () => {
+    purchaseConfirmModal.classList.remove("active");
+});
     </script>
 
 </body>
