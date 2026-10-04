@@ -2053,6 +2053,145 @@ playerFilterButtons.forEach((button) => {
 playerMarketSearch.addEventListener("input", () => {
     filterPlayerListings();
 });
+        /* ==============================
+   DINO MARKET PURCHASE MODAL
+   ============================== */
+
+const marketBuyButtons =
+    document.querySelectorAll(".dino-buy-button");
+
+const marketPurchaseModal =
+    document.querySelector("#marketPurchaseModal");
+
+const closeMarketPurchase =
+    document.querySelector("#closeMarketPurchase");
+
+const marketPurchaseOverlay =
+    document.querySelector(".market-purchase-overlay");
+
+const cancelMarketPurchase =
+    document.querySelector(".cancel-market-purchase");
+
+const confirmMarketPurchase =
+    document.querySelector(".confirm-market-purchase");
+
+const marketPurchaseImage =
+    document.querySelector("#marketPurchaseImage");
+
+const marketPurchaseCategory =
+    document.querySelector("#marketPurchaseCategory");
+
+const marketPurchaseName =
+    document.querySelector("#marketPurchaseName");
+
+const marketPurchaseGrowth =
+    document.querySelector("#marketPurchaseGrowth");
+
+const marketPurchasePrice =
+    document.querySelector("#marketPurchasePrice");
+
+const marketPurchaseCurrentBalance =
+    document.querySelector("#marketPurchaseCurrentBalance");
+
+const marketPurchaseRemainingBalance =
+    document.querySelector("#marketPurchaseRemainingBalance");
+
+
+marketBuyButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const card =
+            button.closest(".dino-market-card");
+
+        const image =
+            card.querySelector(".dino-card-image img");
+
+        const category =
+            card.querySelector(".dino-category");
+
+        const name =
+            card.querySelector("h2");
+
+        const growth =
+            card.querySelector(".dino-growth");
+
+        const price =
+            card.querySelector(".price-number");
+
+
+        const currentBalance =
+            Number(
+                playerWalletBalance.textContent
+                    .replace(/,/g, "")
+                    .trim()
+            );
+
+        const purchasePrice =
+            Number(
+                price.textContent
+                    .replace(/,/g, "")
+                    .trim()
+            );
+
+        const remainingBalance =
+            currentBalance - purchasePrice;
+
+
+        marketPurchaseImage.src = image.src;
+        marketPurchaseImage.alt = name.textContent.trim();
+
+        marketPurchaseCategory.textContent =
+            category.textContent.trim();
+
+        marketPurchaseName.textContent =
+            name.textContent.trim();
+
+        marketPurchaseGrowth.textContent =
+            growth.textContent.trim();
+
+        marketPurchasePrice.textContent =
+            purchasePrice.toLocaleString();
+
+        marketPurchaseCurrentBalance.textContent =
+            `${currentBalance.toLocaleString()} DD`;
+
+        marketPurchaseRemainingBalance.textContent =
+            `${remainingBalance.toLocaleString()} DD`;
+
+
+        if (remainingBalance < 0) {
+
+            confirmMarketPurchase.disabled = true;
+            confirmMarketPurchase.textContent = "NOT ENOUGH DD";
+
+        } else {
+
+            confirmMarketPurchase.disabled = false;
+            confirmMarketPurchase.textContent = "PURCHASE DINO";
+
+        }
+
+
+        marketPurchaseModal.classList.add("active");
+    });
+
+});
+
+
+closeMarketPurchase.addEventListener("click", () => {
+    marketPurchaseModal.classList.remove("active");
+});
+
+
+marketPurchaseOverlay.addEventListener("click", () => {
+    marketPurchaseModal.classList.remove("active");
+});
+
+
+cancelMarketPurchase.addEventListener("click", () => {
+    marketPurchaseModal.classList.remove("active");
+});
     </script>
 
 </body>
