@@ -4246,3 +4246,298 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* ==============================
+   DINO MARKET PURCHASE MODAL
+   ============================== */
+
+.market-page .market-purchase-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 750;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+}
+
+.market-page .market-purchase-modal.active {
+    display: flex;
+}
+
+.market-page .market-purchase-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.84);
+    backdrop-filter: blur(3px);
+}
+
+.market-page .market-purchase-window {
+    position: relative;
+    z-index: 2;
+
+    width: min(500px, 94vw);
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: #080808;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 2px solid #8f0000;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75);
+}
+
+.market-page .market-purchase-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #100606;
+    color: #fff;
+
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+
+    cursor: pointer;
+    z-index: 5;
+}
+
+.market-page .market-purchase-close:hover {
+    background: #750000;
+}
+
+.market-page .market-purchase-header {
+    padding: 26px 26px 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(105, 0, 0, 0.22),
+            rgba(8, 8, 8, 0.96) 45%
+        );
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.market-page .market-purchase-header span {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #8f0000;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.market-page .market-purchase-header h2 {
+    margin: 0 0 6px;
+
+    color: #fff;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.market-page .market-purchase-header p {
+    margin: 0;
+
+    color: #777;
+    font-size: 10px;
+}
+
+.market-page .market-purchase-body {
+    padding: 22px 26px 26px;
+}
+
+.market-page .market-purchase-dino {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 15px;
+    padding: 12px;
+
+    background:
+        radial-gradient(
+            circle at left,
+            rgba(120, 0, 0, 0.15),
+            transparent 55%
+        ),
+        #0b0b0b;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.market-page .market-purchase-dino img {
+    width: 100px;
+    height: 72px;
+
+    object-fit: contain;
+}
+
+.market-page .market-purchase-dino span {
+    display: block;
+
+    color: #850000;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.market-page .market-purchase-dino h3 {
+    margin: 3px 0;
+
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.market-page .market-purchase-dino small {
+    color: #777;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.market-page .market-purchase-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+    padding: 11px 12px;
+
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.market-page .market-purchase-price > span {
+    color: #555;
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.market-page .market-purchase-price strong {
+    color: #d4a339;
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.market-page .market-purchase-price small {
+    color: #8c6b27;
+    font-size: 8px;
+}
+
+.market-page .market-purchase-balance {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.market-page .market-purchase-balance div {
+    padding: 11px;
+
+    background: #0b0b0b;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.market-page .market-purchase-balance span {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #555;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.market-page .market-purchase-balance strong {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.market-page #marketPurchaseRemainingBalance {
+    color: #d4a339;
+}
+
+.market-page .market-purchase-note {
+    margin-bottom: 18px;
+    padding: 10px 11px;
+
+    background: #0b0b0b;
+    border-left: 3px solid #8f0000;
+
+    color: #777;
+    font-size: 9px;
+}
+
+.market-page .market-purchase-note strong {
+    color: #ddd;
+}
+
+.market-page .market-purchase-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+}
+
+.market-page .cancel-market-purchase,
+.market-page .confirm-market-purchase {
+    padding: 12px;
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.market-page .cancel-market-purchase {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0c0c0c;
+    color: #aaa;
+}
+
+.market-page .cancel-market-purchase:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.market-page .confirm-market-purchase {
+    border: 1px solid #9b0000;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8d0000,
+            #560000
+        );
+
+    color: #fff;
+}
+
+.market-page .confirm-market-purchase:hover {
+    background:
+        linear-gradient(
+            180deg,
+            #aa0000,
+            #700000
+        );
+}
+
+@media (max-width: 520px) {
+    .market-page .market-purchase-balance {
+        grid-template-columns: 1fr;
+    }
+}
