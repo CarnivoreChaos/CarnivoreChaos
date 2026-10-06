@@ -2192,6 +2192,42 @@ marketPurchaseOverlay.addEventListener("click", () => {
 cancelMarketPurchase.addEventListener("click", () => {
     marketPurchaseModal.classList.remove("active");
 });
+     /* ==============================
+   COMPLETE DINO MARKET PURCHASE
+   ============================== */
+
+confirmMarketPurchase.addEventListener("click", () => {
+
+    if (confirmMarketPurchase.disabled) {
+        return;
+    }
+
+    const currentBalance =
+        Number(
+            playerWalletBalance.textContent
+                .replace(/,/g, "")
+                .trim()
+        );
+
+    const purchasePrice =
+        Number(
+            marketPurchasePrice.textContent
+                .replace(/,/g, "")
+                .trim()
+        );
+
+    if (currentBalance < purchasePrice) {
+        return;
+    }
+
+    const newBalance =
+        currentBalance - purchasePrice;
+
+    playerWalletBalance.textContent =
+        newBalance.toLocaleString();
+
+    marketPurchaseModal.classList.remove("active");
+});   
     </script>
 
 </body>
