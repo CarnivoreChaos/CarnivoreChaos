@@ -118,7 +118,7 @@ button {
 
     background-position:
         center,
-        72% calc(100% + 190px);
+       right -25px bottom -190px;
 
     background-size:
         cover,
