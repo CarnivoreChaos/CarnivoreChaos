@@ -1370,31 +1370,38 @@ letter-spacing: 2px;
         drop-shadow(0 0 24px rgba(255, 80, 0, 0.35));
 }
 
-   .mutation-dna {
+   /* SKIN CREATOR ARTWORK */
+
+.skin-creator-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skin-creator-card .feature-content {
+    position: relative;
+    z-index: 2;
+    max-width: 65%;
+}
+
+.skin-creator-art {
     position: absolute;
-    right: 12px;
-    bottom: 8px;
-
-    width: 190px;
-    height: 150px;
-
+    right: 15px;
+    bottom: 0;
+    width: 30%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    z-index: 2;
     pointer-events: none;
+    z-index: 1;
 }
 
-.mutation-dna img {
-    width: 190px;
-    height: 150px;
+.skin-creator-image {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     display: block;
-
-    filter:
-        drop-shadow(0 0 6px rgba(255, 0, 35, 0.65))
-        drop-shadow(0 0 12px rgba(160, 40, 255, 0.40));
+    filter: drop-shadow(0 0 12px rgba(255, 30, 60, 0.25));
 }
 .dino-market-image {
     position: absolute;
