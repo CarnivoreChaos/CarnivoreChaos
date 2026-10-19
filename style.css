@@ -1397,8 +1397,8 @@ letter-spacing: 2px;
 }
 
 .skin-creator-image {
-    width: 100%;
-    height: 100%;
+    width: 130%;
+    height: 130%;
     object-fit: contain;
     display: block;
     filter: drop-shadow(0 0 12px rgba(255, 30, 60, 0.25));
