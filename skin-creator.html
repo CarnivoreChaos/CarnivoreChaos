@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skin Creator | Carnivore Chaos</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        /* SKIN CREATOR PAGE */
+
+        .skin-page {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at 75% 25%,
+                    rgba(140, 0, 20, 0.15),
+                    transparent 45%
+                ),
+                #0b0b0e;
+            color: white;
+        }
+
+        .skin-page-content {
+            padding: 45px 45px 80px;
+        }
+
+        .skin-page-heading {
+            margin-bottom: 35px;
+        }
+
+        .skin-page-heading h1 {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #ffffff;
+            margin: 0 0 12px;
+        }
+
+        .skin-page-heading p {
+            color: #a8a8b0;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* PATREON LOCKED PANEL */
+
+        .skin-access-panel {
+            position: relative;
+            max-width: 950px;
+            min-height: 440px;
+            margin: 40px auto;
+            padding: 55px 35px;
+            border: 1px solid rgba(220, 35, 50, 0.55);
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(115, 5, 20, 0.25),
+                    transparent 65%
+                ),
+                linear-gradient(
+                    135deg,
+                    #17151b,
+                    #0d0d11
+                );
+            box-shadow:
+                0 0 35px rgba(170, 0, 25, 0.12),
+                inset 0 0 40px rgba(100, 0, 15, 0.08);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .skin-lock-icon {
+            width: 85px;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 50, 65, 0.5);
+            border-radius: 50%;
+            background: rgba(120, 0, 20, 0.2);
+            color: #ff3548;
+            margin-bottom: 28px;
+        }
+
+        .skin-lock-icon svg {
+            width: 43px;
+            height: 43px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .skin-access-panel h2 {
+            color: #ff3445;
+            font-size: 29px;
+            letter-spacing: 2px;
+            margin: 0 0 18px;
+        }
+
+        .skin-access-panel p {
+            max-width: 550px;
+            color: #c2bec3;
+            line-height: 1.8;
+            font-size: 15px;
+            margin: 0 0 28px;
+        }
+
+        .skin-access-label {
+            color: #e7b957;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .skin-patreon-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 30px;
+            background: linear-gradient(
+                90deg,
+                #aa101f,
+                #ec293a
+            );
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            border: 1px solid #ff4050;
+            transition: 0.2s ease;
+        }
+
+        .skin-patreon-button:hover {
+            background: #ff3045;
+            box-shadow: 0 0 20px rgba(255, 30, 55, 0.35);
+        }
+
+        .skin-access-note {
+            margin-top: 25px;
+            color: #77747b;
+            font-size: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .skin-page-content {
+                padding: 25px 18px 50px;
+            }
+
+            .skin-page-heading h1 {
+                font-size: 26px;
+            }
+
+            .skin-access-panel {
+                min-height: 380px;
+                padding: 35px 20px;
+            }
+
+            .skin-access-panel h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body class="skin-page">
+
+<div class="site-shell">
+
+    <!-- SHARED SIDEBAR -->
+    <div id="site-sidebar"></div>
+
+    <!-- MAIN AREA -->
+    <main class="main-area">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="topbar-spacer">
+                <img
+                    src="./dd-player-amount-icon.png"
+                    alt="Dino Dollars"
+                    class="dd-player-amount-icon"
+                >
+
+                <span class="dd-player-balance">
+                    50,000
+                </span>
+            </div>
+
+        </header>
+
+        <!-- SKIN CREATOR CONTENT -->
+        <div class="skin-page-content">
+
+            <div class="skin-page-heading">
+                <h1>SKIN CREATOR</h1>
+                <p>
+                    Create your own prehistoric masterpiece.
+                    Customize. Save. Dominate.
+                </p>
+            </div>
+
+            <!-- PATREON LOCKED VIEW -->
+            <section class="skin-access-panel">
+
+                <div class="skin-lock-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect
+                            x="5"
+                            y="10"
+                            width="14"
+                            height="11"
+                            rx="2"
+                        />
+                        <path
+                            d="M8 10V7a4 4 0 0 1 8 0v3"
+                        />
+                        <circle cx="12" cy="15" r="1"/>
+                    </svg>
+                </div>
+
+                <div class="skin-access-label">
+                    EXCLUSIVE PATREON FEATURE
+                </div>
+
+                <h2>PATREON ACCESS REQUIRED</h2>
+
+                <p>
+                    Unlock the Carnivore Chaos Skin Creator
+                    and design your very own dinosaur skins!
+                    Customize colors, patterns, and unlock
+                    exclusive visual effects based on your
+                    Patreon membership tier.
+                </p>
+
+                <a
+                    href="#"
+                    class="skin-patreon-button"
+                    id="skinPatreonButton"
+                >
+                    UNLOCK SKIN CREATOR →
+                </a>
+
+                <div class="skin-access-note">
+                    Patreon membership verification
+                    will be available when account
+                    integration is complete.
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="./sidebar.js"></script>
+
+<script>
+    document.getElementById("skinPatreonButton")
+        .addEventListener("click", function(event) {
+            event.preventDefault();
+            alert(
+                "Patreon membership integration is coming soon!"
+            );
+        });
+</script>
+
+</body>
+</html>
